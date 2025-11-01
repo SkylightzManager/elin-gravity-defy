@@ -6,6 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import WhyChoose from "@/components/WhyChoose";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
         <Contact />
       </section>
       <Footer />
+      <Chatbot />
     </main>
   );
 };
