@@ -3,6 +3,7 @@ import { Clock, Users, TrendingUp } from "lucide-react";
 import bungeeYoga from "@/assets/bungee-yoga.jpg";
 import classAction from "@/assets/class-action.jpg";
 import heroImage from "@/assets/hero-bungee.jpg";
+import { getBookingUrl } from "@/lib/platformDetect";
 
 const classes = [
   {
@@ -35,6 +36,10 @@ const classes = [
 ];
 
 const Classes = () => {
+  const handleBooking = () => {
+    const bookingUrl = getBookingUrl();
+    window.open(bookingUrl, '_blank', 'noopener,noreferrer');
+  };
   return (
     <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
       {/* Background Grid Pattern */}
@@ -108,6 +113,7 @@ const Classes = () => {
 
                 {/* CTA */}
                 <Button 
+                  onClick={handleBooking}
                   className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold group/btn"
                 >
                   Book Class

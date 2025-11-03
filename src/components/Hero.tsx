@@ -2,8 +2,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-bungee.jpg";
 import logo from "@/assets/logo.png";
+import { getBookingUrl } from "@/lib/platformDetect";
 
 const Hero = () => {
+  const handleBooking = () => {
+    const bookingUrl = getBookingUrl();
+    window.open(bookingUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -63,7 +69,8 @@ const Hero = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <Button 
-            size="lg" 
+            size="lg"
+            onClick={handleBooking}
             className="bg-gradient-cyan hover:glow-cyan-strong text-white font-bold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group"
           >
             Book Your Flight
