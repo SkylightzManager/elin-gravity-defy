@@ -36,7 +36,7 @@ const classes = [
 
 const Classes = () => {
   return (
-    <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
+    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -61,7 +61,7 @@ const Classes = () => {
           {classes.map((classItem, index) => (
             <div 
               key={index}
-              className="glass-card-dark rounded-2xl overflow-hidden group hover:glow-cyan transition-all duration-500 transform hover:-translate-y-2 animate-fade-in"
+              className="glass-card rounded-2xl overflow-hidden group hover:glow-cyan transition-all duration-500 transform hover:-translate-y-2 animate-fade-in"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Image */}
@@ -87,7 +87,7 @@ const Classes = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">{classItem.title}</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-2">{classItem.title}</h3>
                 <div className="flex items-center gap-2 text-primary mb-4">
                   <Users className="w-4 h-4" />
                   <span className="text-sm font-medium">{classItem.level}</span>
@@ -126,7 +126,7 @@ const Classes = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="glass-card text-white border-primary hover:bg-primary/20 font-semibold px-8"
+            className="glass-card border-primary hover:bg-primary/10 font-semibold px-8"
           >
             Contact Us for Advice
           </Button>

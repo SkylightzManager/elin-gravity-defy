@@ -3,14 +3,14 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-primary/20 py-12">
+    <footer className="bg-secondary border-t border-primary/20 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img src={logo} alt="Elin Dance Studio" className="h-12 w-12" />
-              <span className="font-bold text-lg text-white">
+              <span className="font-bold text-lg text-foreground">
                 Elin Dance <span className="text-primary">Studio</span>
               </span>
             </div>
@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-bold mb-4">Quick Links</h3>
+            <h3 className="text-foreground font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {["About Us", "Classes", "Schedule", "Pricing", "FAQ"].map((link) => (
                 <li key={link}>
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Classes */}
           <div>
-            <h3 className="text-white font-bold mb-4">Our Classes</h3>
+            <h3 className="text-foreground font-bold mb-4">Our Classes</h3>
             <ul className="space-y-2">
               {["Bungee Fitness", "Bungee Yoga", "Sling Bungee", "Private Sessions", "Group Classes"].map((classType) => (
                 <li key={classType}>
@@ -71,7 +71,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-bold mb-4">Contact Us</h3>
+            <h3 className="text-foreground font-bold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />

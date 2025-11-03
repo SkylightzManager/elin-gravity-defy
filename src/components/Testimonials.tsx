@@ -27,7 +27,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-dark relative overflow-hidden">
+    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
       {/* Background Glow Effects */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -51,7 +51,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index}
-              className="glass-card-dark p-8 rounded-2xl hover:glow-cyan transition-all duration-500 transform hover:-translate-y-2 animate-fade-in"
+              className="glass-card p-8 rounded-2xl hover:glow-cyan transition-all duration-500 transform hover:-translate-y-2 animate-fade-in"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Rating Stars */}
@@ -76,7 +76,7 @@ const Testimonials = () => {
                   <span className="text-white font-bold">{testimonial.image}</span>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">{testimonial.name}</p>
+                  <p className="text-foreground font-semibold">{testimonial.name}</p>
                   <p className="text-primary text-sm">{testimonial.role}</p>
                 </div>
               </div>

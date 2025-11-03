@@ -13,8 +13,8 @@ const Hero = () => {
           alt="Bungee fitness workout in action" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent" />
       </div>
 
       {/* Floating Particles Effect */}
@@ -47,7 +47,7 @@ const Hero = () => {
         {/* Main Heading */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in">
           <span className="block text-gradient-cyan">DEFY GRAVITY.</span>
-          <span className="block text-white mt-2">DISCOVER STRENGTH.</span>
+          <span className="block text-foreground mt-2">DISCOVER STRENGTH.</span>
         </h1>
 
         {/* Subheading */}
@@ -72,7 +72,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="glass-card text-white border-primary hover:bg-primary/20 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group"
+            className="glass-card border-primary hover:bg-primary/10 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group"
           >
             <Play className="mr-2 group-hover:scale-110 transition-transform" />
             Watch Video

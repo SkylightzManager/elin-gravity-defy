@@ -28,7 +28,7 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-dark relative overflow-hidden">
+    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-full opacity-30">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl animate-pulse" />
@@ -48,8 +48,8 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="glass-card-dark p-8 rounded-2xl animate-fade-in">
-            <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+          <div className="glass-card p-8 rounded-2xl animate-fade-in">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
             <form className="space-y-6">
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
@@ -57,7 +57,7 @@ const Contact = () => {
                 </label>
                 <Input 
                   placeholder="Your name"
-                  className="bg-background/50 border-primary/30 focus:border-primary text-white"
+                  className="bg-secondary/50 border-primary/30 focus:border-primary"
                 />
               </div>
               <div>
@@ -67,7 +67,7 @@ const Contact = () => {
                 <Input 
                   type="email"
                   placeholder="your.email@example.com"
-                  className="bg-background/50 border-primary/30 focus:border-primary text-white"
+                  className="bg-secondary/50 border-primary/30 focus:border-primary"
                 />
               </div>
               <div>
@@ -77,7 +77,7 @@ const Contact = () => {
                 <Input 
                   type="tel"
                   placeholder="+65 1234 5678"
-                  className="bg-background/50 border-primary/30 focus:border-primary text-white"
+                  className="bg-secondary/50 border-primary/30 focus:border-primary"
                 />
               </div>
               <div>
@@ -87,7 +87,7 @@ const Contact = () => {
                 <Textarea 
                   placeholder="Tell us about your fitness goals or any questions you have..."
                   rows={4}
-                  className="bg-background/50 border-primary/30 focus:border-primary text-white resize-none"
+                  className="bg-secondary/50 border-primary/30 focus:border-primary resize-none"
                 />
               </div>
               <Button 
@@ -113,7 +113,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-white mb-1">{info.title}</h4>
+                    <h4 className="text-lg font-bold text-foreground mb-1">{info.title}</h4>
                     <p className="text-muted-foreground">{info.content}</p>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ const Contact = () => {
 
             {/* Social Media */}
             <div className="glass-card p-6 rounded-xl">
-              <h4 className="text-lg font-bold text-white mb-4">Follow Us</h4>
+              <h4 className="text-lg font-bold text-foreground mb-4">Follow Us</h4>
               <div className="flex gap-4">
                 <a 
                   href="#" 

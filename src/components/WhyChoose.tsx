@@ -26,7 +26,7 @@ const reasons = [
 
 const WhyChoose = () => {
   return (
-    <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
+    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
       <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
@@ -49,17 +49,17 @@ const WhyChoose = () => {
             {reasons.map((reason, index) => (
               <div 
                 key={index}
-                className="glass-card-dark p-6 rounded-xl hover:glow-cyan transition-all duration-300 transform hover:translate-x-2 animate-fade-in"
+                className="glass-card p-6 rounded-xl hover:glow-cyan transition-all duration-300 transform hover:translate-x-2 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-gradient-cyan rounded-lg flex items-center justify-center">
-                      <reason.icon className="w-6 h-6 text-white" />
+                      <reason.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{reason.title}</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">{reason.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{reason.description}</p>
                   </div>
                 </div>
@@ -79,22 +79,22 @@ const WhyChoose = () => {
             </div>
 
             {/* Floating Badge 1 */}
-            <div className="absolute top-6 -left-6 glass-card-dark p-4 rounded-xl border-2 border-primary animate-float">
+            <div className="absolute top-6 -left-6 glass-card p-4 rounded-xl border-2 border-primary animate-float">
               <p className="text-primary font-bold text-sm">First in Singapore</p>
-              <p className="text-white text-xs">Since 2019</p>
+              <p className="text-foreground text-xs">Since 2019</p>
             </div>
 
             {/* Floating Badge 2 */}
-            <div className="absolute bottom-6 -right-6 glass-card-dark p-4 rounded-xl border-2 border-primary animate-float" style={{ animationDelay: '2s' }}>
+            <div className="absolute bottom-6 -right-6 glass-card p-4 rounded-xl border-2 border-primary animate-float" style={{ animationDelay: '2s' }}>
               <p className="text-primary font-bold text-sm">Safety First</p>
-              <p className="text-white text-xs">100% Track Record</p>
+              <p className="text-foreground text-xs">100% Track Record</p>
             </div>
           </div>
         </div>
 
         {/* Certifications Banner */}
-        <div className="glass-card-dark p-8 rounded-2xl text-center max-w-4xl mx-auto animate-fade-in">
-          <h3 className="text-2xl font-bold text-white mb-4">
+        <div className="glass-card p-8 rounded-2xl text-center max-w-4xl mx-auto animate-fade-in">
+          <h3 className="text-2xl font-bold text-foreground mb-4">
             Internationally Recognized & Certified
           </h3>
           <p className="text-muted-foreground mb-6">

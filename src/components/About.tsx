@@ -26,7 +26,7 @@ const benefits = [
 
 const About = () => {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-dark relative overflow-hidden">
+    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -52,12 +52,12 @@ const About = () => {
                 alt="Bungee fitness class in action with multiple participants"
                 className="w-full h-auto"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
             {/* Badge */}
-            <div className="absolute -bottom-6 -right-6 glass-card-dark p-6 rounded-xl border-2 border-primary animate-pulse-glow">
+            <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl border-2 border-primary animate-pulse-glow">
               <p className="text-primary font-bold text-lg">Singapore's Only</p>
-              <p className="text-white font-semibold">Bungee Fitness Training Centre</p>
+              <p className="text-foreground font-semibold">Bungee Fitness Training Centre</p>
             </div>
           </div>
 
@@ -70,9 +70,9 @@ const About = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-14 h-14 bg-gradient-cyan rounded-full flex items-center justify-center mb-4">
-                  <benefit.icon className="w-7 h-7 text-white" />
+                  <benefit.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
