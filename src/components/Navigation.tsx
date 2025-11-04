@@ -23,6 +23,15 @@ const Navigation = () => {
     { label: "Contact", href: "#contact" },
   ];
 
+  const handleBookNow = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -61,7 +70,10 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-cyan hover:glow-cyan text-white font-semibold">
+            <Button 
+              onClick={handleBookNow}
+              className="bg-gradient-cyan hover:glow-cyan text-white font-semibold"
+            >
               Book Now
             </Button>
           </div>
@@ -91,7 +103,10 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
-            <Button className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold">
+            <Button 
+              onClick={handleBookNow}
+              className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold"
+            >
               Book Now
             </Button>
           </div>

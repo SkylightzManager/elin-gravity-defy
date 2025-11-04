@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Classes from "@/components/Classes";
 import Testimonials from "@/components/Testimonials";
 import WhyChoose from "@/components/WhyChoose";
+import MilestoneJourney from "@/components/MilestoneJourney";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
@@ -26,6 +27,9 @@ const Index = () => {
       </section>
       <section id="why-choose">
         <WhyChoose />
+      </section>
+      <section id="milestone">
+        <MilestoneJourney />
       </section>
       <section id="contact">
         <Contact />
