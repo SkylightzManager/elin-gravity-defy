@@ -80,7 +80,7 @@ const Classes = () => {
                 
                 {/* Badges */}
                 <div className="absolute top-4 left-4 flex gap-2">
-                  <span className="glass-card px-3 py-1 text-xs font-semibold text-white rounded-full">
+                  <span className="glass-card px-3 py-1 text-xs font-semibold text-foreground rounded-full border border-primary/30 backdrop-blur-sm bg-background/70">
                     <Clock className="w-3 h-3 inline mr-1" />
                     {classItem.duration}
                   </span>
