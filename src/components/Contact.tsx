@@ -203,14 +203,17 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Google Maps */}
             <div className="glass-card rounded-xl overflow-hidden h-64">
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-background flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <p className="text-muted-foreground">Interactive map coming soon</p>
-                </div>
-              </div>
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=7RG2%2BGM%20Singapore&output=embed"
+                title="Elin Dance Studio Location"
+              />
             </div>
           </div>
         </div>
