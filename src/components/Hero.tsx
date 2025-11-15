@@ -79,7 +79,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="glass-card border-primary hover:bg-primary/10 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group"
+            className="glass-card border-primary text-foreground hover:bg-primary/10 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group bg-background/80 backdrop-blur-sm"
           >
             <Play className="mr-2 group-hover:scale-110 transition-transform" />
             Watch Video
