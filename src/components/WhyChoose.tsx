@@ -4,23 +4,23 @@ import instructorImage from "@/assets/instructor.jpg";
 const reasons = [
   {
     icon: Award,
-    title: "Professional Certification",
-    description: "All instructors are internationally certified and trained in bungee fitness safety protocols",
+    title: "International Certification",
+    description: "All bungee fitness instructors at our Singapore studio are internationally certified and trained in the highest safety protocols",
   },
   {
     icon: Shield,
-    title: "Premium Equipment",
-    description: "State-of-the-art bungee systems with the highest safety standards and regular maintenance",
+    title: "Premium Bungee Equipment",
+    description: "State-of-the-art bungee systems meeting international safety standards with regular maintenance - Singapore's safest aerial fitness studio",
   },
   {
     icon: Users,
-    title: "Expert Guidance",
-    description: "Small class sizes ensure personalized attention and proper technique guidance for every member",
+    title: "Expert Personal Guidance",
+    description: "Small bungee fitness class sizes ensure personalized attention and proper technique guidance for every member in Singapore",
   },
   {
     icon: Sparkles,
-    title: "Proven Results",
-    description: "Members see visible results within weeks - improved fitness, strength, and confidence",
+    title: "Proven Fitness Results",
+    description: "Our bungee workout members see visible results within weeks - improved fitness, strength, weight loss, and confidence at Singapore's #1 studio",
   },
 ];
 
@@ -38,7 +38,7 @@ const WhyChoose = () => {
             Why Choose <span className="text-gradient-cyan">Elin Dance Studio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Singapore's trusted name in bungee fitness with unmatched expertise and dedication
+            Singapore's most trusted bungee fitness studio since 2019 - unmatched expertise, certified instructors, and proven results near Alexandra
           </p>
         </div>
 
@@ -72,7 +72,7 @@ const WhyChoose = () => {
             <div className="relative rounded-2xl overflow-hidden glow-cyan-strong">
               <img 
                 src={instructorImage} 
-                alt="Professional bungee fitness instructor helping a student"
+                alt="Certified bungee fitness instructor at Elin Dance Studio Singapore guiding student in aerial workout near Alexandra"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -80,14 +80,14 @@ const WhyChoose = () => {
 
             {/* Floating Badge 1 */}
             <div className="absolute top-6 -left-6 glass-card p-4 rounded-xl border-2 border-primary animate-float">
-              <p className="text-primary font-bold text-sm">First in Singapore</p>
-              <p className="text-foreground text-xs">Since 2019</p>
+              <p className="text-primary font-bold text-sm">Singapore's First Bungee Fitness</p>
+              <p className="text-foreground text-xs">Established 2019</p>
             </div>
 
             {/* Floating Badge 2 */}
             <div className="absolute bottom-6 -right-6 glass-card p-4 rounded-xl border-2 border-primary animate-float" style={{ animationDelay: '2s' }}>
-              <p className="text-primary font-bold text-sm">Safety First</p>
-              <p className="text-foreground text-xs">100% Track Record</p>
+              <p className="text-primary font-bold text-sm">100% Safety Record</p>
+              <p className="text-foreground text-xs">Certified Instructors</p>
             </div>
           </div>
         </div>
@@ -95,16 +95,16 @@ const WhyChoose = () => {
         {/* Certifications Banner */}
         <div className="glass-card p-8 rounded-2xl text-center max-w-4xl mx-auto animate-fade-in">
           <h3 className="text-2xl font-bold text-foreground mb-4">
-            Internationally Recognized & Certified
+            Internationally Recognized Bungee Fitness Certifications in Singapore
           </h3>
           <p className="text-muted-foreground mb-6">
-            Our instructors hold certifications from leading fitness organizations worldwide
+            Our bungee workout instructors hold certifications from leading global fitness organizations
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-primary font-semibold">
-            <span>• ACE Certified</span>
-            <span>• AFAA Certified</span>
+            <span>• ACE Certified Trainer</span>
+            <span>• AFAA Fitness Professional</span>
             <span>• Bungee Fitness International</span>
-            <span>• First Aid & CPR</span>
+            <span>• First Aid & CPR Certified</span>
           </div>
         </div>
       </div>
