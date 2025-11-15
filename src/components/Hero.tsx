@@ -52,18 +52,18 @@ const Hero = () => {
 
         {/* Main Heading */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in">
-          <span className="block text-gradient-cyan">DEFY GRAVITY.</span>
-          <span className="block text-foreground mt-2">DISCOVER STRENGTH.</span>
+          <span className="block text-gradient-cyan">BUNGEE FITNESS SINGAPORE</span>
+          <span className="block text-foreground mt-2">DEFY GRAVITY. DISCOVER STRENGTH.</span>
         </h1>
 
         {/* Subheading */}
         <p className="text-xl sm:text-2xl md:text-3xl text-primary font-semibold mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Singapore's Premier Bungee Fitness Studio
+          Singapore's Premier Bungee Workout Studio Near Alexandra & Labrador Park MRT
         </p>
 
         {/* Tagline */}
         <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in script-font" style={{ animationDelay: '0.4s' }}>
-          Every Mind Matters, Every Dream Counts
+          Low-Impact, High-Intensity Bungee Fitness Classes for Ages 4-66 | Every Mind Matters, Every Dream Counts
         </p>
 
         {/* CTA Buttons */}
@@ -73,7 +73,7 @@ const Hero = () => {
             onClick={handleBooking}
             className="bg-gradient-cyan hover:glow-cyan-strong text-white font-bold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group"
           >
-            Book Your Flight
+            Book Your Bungee Fitness Trial
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button 
@@ -82,7 +82,7 @@ const Hero = () => {
             className="glass-card border-primary text-foreground hover:bg-primary/10 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group bg-background/80 backdrop-blur-sm"
           >
             <Play className="mr-2 group-hover:scale-110 transition-transform" />
-            Watch Video
+            Watch Bungee Workout Video
           </Button>
         </div>
 

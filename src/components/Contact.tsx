@@ -9,22 +9,22 @@ import emailjs from '@emailjs/browser';
 const contactInfo = [
   {
     icon: MapPin,
-    title: "Visit Us",
-    content: "123 Fitness Avenue, Singapore 123456",
+    title: "Visit Our Bungee Fitness Studio",
+    content: "Near Alexandra & Labrador Park MRT, Singapore",
   },
   {
     icon: Phone,
-    title: "Call Us",
+    title: "Call Elin Dance Studio",
     content: "+65 1234 5678",
   },
   {
     icon: Mail,
-    title: "Email Us",
+    title: "Email Us About Classes",
     content: "hello@elindance.sg",
   },
   {
     icon: Clock,
-    title: "Opening Hours",
+    title: "Bungee Workout Hours",
     content: "Mon-Sun: 8am - 10pm",
   },
 ];
@@ -89,10 +89,10 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            Ready to <span className="text-gradient-cyan">Take Flight</span>?
+            Book Your <span className="text-gradient-cyan">Bungee Fitness Trial</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get in touch to book your first class or ask us anything
+            Contact Singapore's #1 bungee workout studio near Alexandra - Start your aerial fitness journey today!
           </p>
         </div>
 

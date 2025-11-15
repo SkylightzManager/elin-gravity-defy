@@ -7,30 +7,30 @@ import { getBookingUrl } from "@/lib/platformDetect";
 
 const classes = [
   {
-    title: "Bungee Fitness",
+    title: "Bungee Fitness Workout",
     image: heroImage,
     duration: "60 min",
     level: "All Levels",
     intensity: "High",
-    description: "High-energy full-body workout combining cardio, strength training, and the thrill of flying",
-    features: ["Cardio Blast", "Core Strength", "Calorie Burn"],
+    description: "Singapore's premier high-energy bungee workout combining cardio, strength training, and the thrill of aerial fitness - perfect for weight loss and toning",
+    features: ["Cardio Blast", "Core Strength", "High Calorie Burn"],
   },
   {
-    title: "Bungee Yoga",
+    title: "Bungee Yoga Singapore",
     image: bungeeYoga,
     duration: "60 min",
     level: "Beginner-Intermediate",
     intensity: "Medium",
-    description: "Graceful fusion of traditional yoga poses with the support of bungee cords for deeper stretches",
+    description: "Graceful fusion of traditional yoga poses with bungee cord support for deeper stretches and improved flexibility - Singapore's unique aerial yoga experience",
     features: ["Flexibility", "Balance", "Mindfulness"],
   },
   {
-    title: "Sling Bungee",
+    title: "Aerial Bungee Training",
     image: classAction,
     duration: "45 min",
     level: "Intermediate-Advanced",
     intensity: "Very High",
-    description: "Advanced bungee training with dynamic movements and aerial techniques for experienced flyers",
+    description: "Advanced bungee fitness training with dynamic aerial movements and techniques for experienced fitness enthusiasts in Singapore",
     features: ["Advanced Moves", "Power Training", "Endurance"],
   },
 ];
@@ -54,10 +54,10 @@ const Classes = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            Experience the <span className="text-gradient-cyan">Flight</span>
+            Bungee Fitness <span className="text-gradient-cyan">Classes in Singapore</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose your journey - from beginner-friendly sessions to advanced aerial training
+            Experience our signature bungee workout classes near Alexandra & Labrador Park - from beginner-friendly sessions to advanced aerial fitness training
           </p>
         </div>
 
@@ -116,7 +116,7 @@ const Classes = () => {
                   onClick={handleBooking}
                   className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold group/btn"
                 >
-                  Book Class
+                  Book Bungee Fitness Class
                   <TrendingUp className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </div>
@@ -127,14 +127,15 @@ const Classes = () => {
         {/* Bottom CTA */}
         <div className="text-center animate-fade-in">
           <p className="text-lg text-muted-foreground mb-4">
-            Not sure which class is right for you?
+            Not sure which bungee fitness class is right for you in Singapore?
           </p>
           <Button 
             variant="outline" 
             size="lg"
             className="glass-card border-primary hover:bg-primary/10 font-semibold px-8"
+            onClick={() => window.location.href = '#contact'}
           >
-            Contact Us for Advice
+            Contact Elin Dance Studio for Guidance
           </Button>
         </div>
       </div>

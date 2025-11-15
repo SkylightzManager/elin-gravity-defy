@@ -4,23 +4,23 @@ import classImage from "@/assets/class-action.jpg";
 const benefits = [
   {
     icon: Heart,
-    title: "Full-Body Cardio",
-    description: "High intensity cardio that gets your heart pumping and burns calories fast",
+    title: "Full-Body Cardio Workout",
+    description: "High-intensity bungee fitness cardio that boosts heart health and burns calories fast - perfect for weight loss in Singapore",
   },
   {
     icon: Zap,
-    title: "Low Impact",
-    description: "Gentle on joints while delivering maximum results - perfect for all fitness levels",
+    title: "Low-Impact Aerial Training",
+    description: "Gentle on joints while delivering maximum results - our bungee workout is perfect for all fitness levels and ages 4-66",
   },
   {
     icon: Dumbbell,
     title: "Strength & Toning",
-    description: "Build core strength and tone arms, legs, and calves with every movement",
+    description: "Build core strength and tone your entire body with every bungee fitness movement at Singapore's premier aerial studio",
   },
   {
     icon: Smile,
-    title: "Pure Joy",
-    description: "Experience the sensation of flying without the freefall - fun guaranteed!",
+    title: "Fun Family Fitness",
+    description: "Experience the joy of flying without the freefall - Singapore's most exciting family-friendly fitness activity!",
   },
 ];
 
@@ -35,10 +35,10 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            What is <span className="text-gradient-cyan">Bungee Workout</span>?
+            What is <span className="text-gradient-cyan">Bungee Fitness</span>?
           </h2>
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            Low Impact, High Intensity Cardio Workout that enables you to <span className="text-primary font-semibold">fly!</span>
+            Singapore's Most Exciting Bungee Workout: Low-Impact, High-Intensity Aerial Fitness Training that Lets You <span className="text-primary font-semibold">Defy Gravity & Fly!</span>
           </p>
         </div>
 
@@ -49,7 +49,7 @@ const About = () => {
             <div className="relative rounded-2xl overflow-hidden glow-cyan">
               <img 
                 src={classImage} 
-                alt="Bungee fitness class in action with multiple participants"
+                alt="Bungee fitness class in action at Elin Dance Studio Singapore - multiple participants doing aerial workout near Alexandra"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -57,7 +57,7 @@ const About = () => {
             {/* Badge */}
             <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl border-2 border-primary animate-pulse-glow">
               <p className="text-primary font-bold text-lg">Singapore's Only</p>
-              <p className="text-foreground font-semibold">Bungee Fitness Training Centre</p>
+              <p className="text-foreground font-semibold">Bungee Fitness Training Centre Near Alexandra</p>
             </div>
           </div>
 
