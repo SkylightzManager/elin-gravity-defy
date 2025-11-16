@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 
 const contactInfo = [
   {
@@ -32,50 +31,19 @@ const contactInfo = [
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      // Replace these with your EmailJS credentials
-      const result = await emailjs.send(
-        'YOUR_SERVICE_ID',  // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          to_email: 'hello@elindance.sg', // Your email
-        },
-        'YOUR_PUBLIC_KEY'  // Replace with your EmailJS public key
-      );
-
+  // Check if form was submitted successfully
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('submitted') === 'true') {
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out! We'll get back to you soon.",
       });
-
-      // Reset form
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+      // Clean up URL
+      window.history.replaceState({}, '', window.location.pathname);
     }
-  };
+  }, [toast]);
 
   return (
     <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
@@ -100,63 +68,79 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="glass-card p-8 rounded-2xl animate-fade-in">
             <h3 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              action="https://formsubmit.co/anshguptasjs@gmail.com" 
+              method="POST"
+              onSubmit={() => setIsSubmitting(true)}
+              className="space-y-6"
+            >
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value={`${window.location.origin}?submitted=true`} />
+              <input type="hidden" name="_subject" value="New Bungee Fitness Inquiry - Elin Dance Studio" />
+              <input type="hidden" name="_template" value="table" />
+
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Full Name
                 </label>
                 <Input 
+                  type="text"
+                  name="full_name"
                   placeholder="Your name"
-                  value={formData.name}
-                  onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                   required
+                  maxLength={100}
                   className="bg-secondary/50 border-primary/30 focus:border-primary"
                 />
               </div>
+
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Email Address
                 </label>
                 <Input 
                   type="email"
+                  name="email"
                   placeholder="your.email@example.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                   required
+                  maxLength={255}
                   className="bg-secondary/50 border-primary/30 focus:border-primary"
                 />
               </div>
+
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Phone Number
                 </label>
                 <Input 
                   type="tel"
+                  name="phone"
                   placeholder="+65 1234 5678"
-                  value={formData.phone}
-                  onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                  maxLength={20}
                   className="bg-secondary/50 border-primary/30 focus:border-primary"
                 />
               </div>
+
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Message
                 </label>
                 <Textarea 
+                  name="message"
                   placeholder="Tell us about your fitness goals or any questions you have..."
                   rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                   required
+                  maxLength={1000}
                   className="bg-secondary/50 border-primary/30 focus:border-primary resize-none"
                 />
               </div>
+
               <Button 
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold py-6 text-lg"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? 'Sending...' : 'Book Your Bungee Fitness Trial'}
               </Button>
             </form>
           </div>
