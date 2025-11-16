@@ -32,18 +32,35 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Check if form was submitted successfully
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('submitted') === 'true') {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      await fetch('https://formsubmit.co/anshguptasjs@gmail.com', {
+        method: 'POST',
+        body: formData,
+      });
+
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out! We'll get back to you soon.",
       });
-      // Clean up URL
-      window.history.replaceState({}, '', window.location.pathname);
+
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-  }, [toast]);
+  };
 
   return (
     <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
@@ -69,14 +86,11 @@ const Contact = () => {
           <div className="glass-card p-8 rounded-2xl animate-fade-in">
             <h3 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
             <form 
-              action="https://formsubmit.co/anshguptasjs@gmail.com" 
-              method="POST"
-              onSubmit={() => setIsSubmitting(true)}
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               {/* FormSubmit Configuration */}
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value={`${window.location.origin}?submitted=true`} />
               <input type="hidden" name="_subject" value="New Bungee Fitness Inquiry - Elin Dance Studio" />
               <input type="hidden" name="_template" value="table" />
 
@@ -140,7 +154,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold py-6 text-lg"
               >
-                {isSubmitting ? 'Sending...' : 'Book Your Bungee Fitness Trial'}
+                {isSubmitting ? 'Sending...' : 'Submit'}
               </Button>
             </form>
           </div>
