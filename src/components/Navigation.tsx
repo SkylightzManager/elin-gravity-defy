@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { getBookingUrl } from "@/lib/platformDetect";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,13 +24,10 @@ const Navigation = () => {
     { label: "Contact", href: "#contact" },
   ];
 
-  const handleBookNow = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMobileMenuOpen(false);
-    }
+  const handleBookNow = () => {
+    const bookingUrl = getBookingUrl();
+    window.open(bookingUrl, '_blank', 'noopener,noreferrer');
+    setIsMobileMenuOpen(false);
   };
 
   return (

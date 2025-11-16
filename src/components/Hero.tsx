@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
@@ -46,7 +46,7 @@ const Hero = () => {
           <img 
             src={logo} 
             alt="Elin Dance Studio Logo" 
-            className="w-32 h-32 sm:w-40 sm:h-40 mx-auto animate-pulse-glow"
+            className="w-32 h-32 sm:w-40 sm:h-40 mx-auto"
           />
         </div>
 
