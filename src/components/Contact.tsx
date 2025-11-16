@@ -30,37 +30,19 @@ const contactInfo = [
 
 const Contact = () => {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      await fetch('https://formsubmit.co/anshguptasjs@gmail.com', {
-        method: 'POST',
-        body: formData,
-      });
-
+  // Check for successful submission on page load
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('submitted') === 'true') {
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out! We'll get back to you soon.",
       });
-
-      form.reset();
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+      // Clean up URL
+      window.history.replaceState({}, '', window.location.pathname);
     }
-  };
+  }, [toast]);
 
   return (
     <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
@@ -86,13 +68,15 @@ const Contact = () => {
           <div className="glass-card p-8 rounded-2xl animate-fade-in">
             <h3 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
             <form 
-              onSubmit={handleSubmit}
+              action="https://formsubmit.co/anshguptasjs@gmail.com"
+              method="POST"
               className="space-y-6"
             >
               {/* FormSubmit Configuration */}
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New Bungee Fitness Inquiry - Elin Dance Studio" />
               <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value={`${window.location.origin}?submitted=true`} />
 
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
@@ -149,12 +133,11 @@ const Contact = () => {
                 />
               </div>
 
-              <Button 
+              <Button
                 type="submit"
-                disabled={isSubmitting}
                 className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold py-6 text-lg"
               >
-                {isSubmitting ? 'Sending...' : 'Submit'}
+                Submit
               </Button>
             </form>
           </div>
