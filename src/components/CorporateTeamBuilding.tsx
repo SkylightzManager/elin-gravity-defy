@@ -159,6 +159,52 @@ const CorporateTeamBuilding = () => {
             ))}
           </div>
         </div>
+
+        {/* Trusted By Section */}
+        <div className="glass-card p-8 sm:p-12 rounded-2xl text-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8">Trusted By Leading Companies</h3>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-8 rounded-xl mb-8">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-2xl">★</span>
+                  ))}
+                </div>
+              </div>
+              <blockquote className="text-lg italic text-foreground mb-6">
+                "Love the bungee fitness session at Elin Dance studio. All my friends and colleagues enjoyed the session. 
+                The instructors were very patient to guide us through in a fun way. Definitely, a great choice for team 
+                bonding and gathering activities for friends & family. Check it out now!"
+              </blockquote>
+              <div className="flex items-center justify-center gap-3">
+                <div className="w-12 h-12 bg-gradient-cyan rounded-full flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-foreground">Corporate Client</p>
+                  <p className="text-sm text-muted-foreground">Team Building Session</p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground mb-6">
+              Join the growing list of Singapore companies who have chosen us for their team building and wellness programs.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              {["Corporate Events", "Team Building", "Wellness Programs", "Staff Appreciation"].map((tag, index) => (
+                <span 
+                  key={index}
+                  className="px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-foreground"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
