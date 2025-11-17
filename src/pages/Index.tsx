@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Classes from "@/components/Classes";
+import CorporateTeamBuilding from "@/components/CorporateTeamBuilding";
 import Testimonials from "@/components/Testimonials";
 import WhyChoose from "@/components/WhyChoose";
 import MilestoneJourney from "@/components/MilestoneJourney";
@@ -22,6 +23,9 @@ const Index = () => {
       </section>
       <section id="classes">
         <Classes />
+      </section>
+      <section id="corporate">
+        <CorporateTeamBuilding />
       </section>
       <section id="testimonials">
         <Testimonials />
