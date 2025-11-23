@@ -8,6 +8,7 @@ import WhyChoose from "@/components/WhyChoose";
 import MilestoneJourney from "@/components/MilestoneJourney";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import FeaturedMedia from "@/components/FeaturedMedia";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
@@ -42,6 +43,7 @@ const Index = () => {
       <section id="contact">
         <Contact />
       </section>
+      <FeaturedMedia />
       <Footer />
       <Chatbot />
     </main>

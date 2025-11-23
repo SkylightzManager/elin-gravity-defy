@@ -3,6 +3,7 @@ import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-bungee.jpg";
 import logo from "@/assets/logo.png";
 import { getBookingUrl } from "@/lib/platformDetect";
+import AppDownload from "@/components/AppDownload";
 
 const Hero = () => {
   const handleBooking = () => {
@@ -84,6 +85,11 @@ const Hero = () => {
             <Play className="mr-2 group-hover:scale-110 transition-transform" />
             Watch Bungee Workout Video
           </Button>
+        </div>
+
+        {/* App Download Buttons */}
+        <div className="mt-8 animate-fade-in flex justify-center" style={{ animationDelay: '0.8s' }}>
+          <AppDownload />
         </div>
 
         {/* Scroll Indicator */}

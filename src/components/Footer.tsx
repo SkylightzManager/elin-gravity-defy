@@ -1,5 +1,6 @@
-import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone, MapPin, Heart } from "lucide-react";
 import logo from "@/assets/logo.png";
+import AppDownload from "@/components/AppDownload";
 
 const Footer = () => {
   return (
@@ -102,6 +103,40 @@ const Footer = () => {
                 <a href="mailto:hello@elindance.sg" className="hover:text-primary transition-colors">hello@elindance.sg</a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* App Download Section */}
+        <div className="border-t border-primary/20 pt-8 mb-8">
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-foreground mb-2">Download Our App</h3>
+            <p className="text-muted-foreground text-sm">Book classes on the go</p>
+          </div>
+          <div className="flex justify-center">
+            <AppDownload />
+          </div>
+        </div>
+
+        {/* Partnership Section */}
+        <div className="border-t border-primary/20 pt-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-4">We Are Also On:</h3>
+              <div className="flex items-center gap-4">
+                <div className="bg-gradient-to-br from-pink-500 to-purple-600 px-6 py-3 rounded-lg">
+                  <span className="text-white font-bold">Lazada</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-4">In support of:</h3>
+              <div className="flex items-center gap-4">
+                <div className="bg-gradient-to-br from-pink-400 to-orange-400 px-6 py-3 rounded-lg flex items-center gap-2">
+                  <Heart className="w-5 h-5 text-white" fill="white" />
+                  <span className="text-white font-bold">Famvues</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
