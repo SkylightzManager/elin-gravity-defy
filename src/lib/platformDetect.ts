@@ -3,16 +3,16 @@ export const detectPlatform = () => {
   const platform = navigator.platform.toLowerCase();
   
   // Check for iOS
-  if (/iphone|ipad|ipod/.test(userAgent) || platform.includes('mac')) {
+  if (/iphone|ipad|ipod/.test(userAgent) || (platform.includes('mac') && 'ontouchend' in document)) {
     return 'ios';
   }
   
-  // Check for Android or Windows
-  if (/android/.test(userAgent) || platform.includes('win')) {
-    return 'android';
+  // Check for macOS (desktop)
+  if (platform.includes('mac')) {
+    return 'ios';
   }
   
-  // Default to Android for other platforms
+  // Default to Android for Windows, Android, and others
   return 'android';
 };
 
