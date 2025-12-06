@@ -68,7 +68,7 @@ const Contact = () => {
           <div className="glass-card p-8 rounded-2xl animate-fade-in">
             <h3 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
             <form 
-              action="https://formsubmit.co/enquiry@elindance.com.sg"
+              action="https://formsubmit.co/imperialgamerop@gmail.com"
               method="POST"
               className="space-y-6"
             >
