@@ -97,7 +97,7 @@ const TrialClass = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
           <h2 className="text-4xl font-bold text-center mb-12">Book Your $30 Trial Class</h2>
-          <form action="https://formsubmit.co/enquiry@elindance.com.sg" method="POST" className="glass-card p-8 rounded-2xl space-y-6">
+          <form action="https://formsubmit.co/imperialgamerop@gmail.com" method="POST" className="glass-card p-8 rounded-2xl space-y-6">
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_subject" value="Trial Class Booking - Elin Dance Studio" />

@@ -85,7 +85,7 @@ const WHO2025 = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
           <h2 className="text-4xl font-bold text-center mb-12">Get Your WHO2025 Package</h2>
-          <form action="https://formsubmit.co/enquiry@elindance.com.sg" method="POST" className="glass-card p-8 rounded-2xl space-y-6">
+          <form action="https://formsubmit.co/imperialgamerop@gmail.com" method="POST" className="glass-card p-8 rounded-2xl space-y-6">
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_subject" value="New WHO2025 Package Enquiry - Elin Dance Studio" />

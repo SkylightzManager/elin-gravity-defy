@@ -127,7 +127,7 @@ const Footer = () => {
             {/* Newsletter */}
             <div className="mt-6">
               <h4 className="text-sm font-bold text-foreground mb-3">Join Our Mailing List</h4>
-              <form action="https://formsubmit.co/enquiry@elindance.com.sg" method="POST" className="flex gap-2">
+              <form action="https://formsubmit.co/imperialgamerop@gmail.com" method="POST" className="flex gap-2">
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_subject" value="New Newsletter Signup - Elin Dance Studio" />
