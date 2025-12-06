@@ -21,6 +21,7 @@ import InstructorCertification from "./pages/InstructorCertification";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Media from "./pages/Media";
+import CorporateTeamBuilding from "./pages/CorporateTeamBuilding";
 
 const queryClient = new QueryClient();
 
@@ -32,20 +33,24 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* Classes Routes */}
           <Route path="/classes" element={<Classes />} />
-          <Route path="/bungee-workout" element={<BungeeWorkout />} />
-          <Route path="/bungee-hiit" element={<BungeeHIIT />} />
-          <Route path="/bungee-oscillate" element={<BungeeOscillate />} />
-          <Route path="/kids-bungee" element={<KidsBungee />} />
-          <Route path="/family-bungee" element={<FamilyBungee />} />
+          <Route path="/classes/bungee-workout-singapore" element={<BungeeWorkout />} />
+          <Route path="/classes/bungee-hiit-singapore" element={<BungeeHIIT />} />
+          <Route path="/classes/bungee-oscillate-singapore" element={<BungeeOscillate />} />
+          <Route path="/classes/kids-bungee-singapore" element={<KidsBungee />} />
+          <Route path="/classes/family-bungee-singapore" element={<FamilyBungee />} />
+          {/* Promotions Routes */}
           <Route path="/promotions" element={<Promotions />} />
-          <Route path="/who2025" element={<WHO2025 />} />
-          <Route path="/heart-of-society" element={<HeartOfSociety />} />
-          <Route path="/kids-bungee-promo" element={<KidsBungeePromo />} />
-          <Route path="/trial-class" element={<TrialClass />} />
-          <Route path="/anniversary" element={<Anniversary />} />
-          <Route path="/instructor-certification" element={<InstructorCertification />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/promotions/who2025-bungee-fitness" element={<WHO2025 />} />
+          <Route path="/promotions/heart-of-society" element={<HeartOfSociety />} />
+          <Route path="/promotions/kids-bungee-promo" element={<KidsBungeePromo />} />
+          <Route path="/promotions/bungee-trial-class-singapore" element={<TrialClass />} />
+          <Route path="/promotions/anniversary-deals" element={<Anniversary />} />
+          {/* Other Routes */}
+          <Route path="/corporate-teambuilding-singapore" element={<CorporateTeamBuilding />} />
+          <Route path="/bungee-instructor-certification-singapore" element={<InstructorCertification />} />
+          <Route path="/about-elin-dance-studio" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/media" element={<Media />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

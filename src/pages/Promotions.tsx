@@ -8,7 +8,7 @@ const Promotions = () => {
   const promotions = [
     {
       title: "WHO2025",
-      slug: "who2025",
+      slug: "who2025-bungee-fitness",
       icon: Sparkles,
       tagline: "Celebrate wellness with exclusive 2025 packages",
       color: "from-cyan-500 to-blue-500"
@@ -29,14 +29,14 @@ const Promotions = () => {
     },
     {
       title: "Trial Class",
-      slug: "trial-class",
+      slug: "bungee-trial-class-singapore",
       icon: Gift,
       tagline: "First-time? Try for just $30 (was $55)",
       color: "from-purple-500 to-indigo-500"
     },
     {
       title: "Anniversary Special",
-      slug: "anniversary",
+      slug: "anniversary-deals",
       icon: PartyPopper,
       tagline: "Celebrate with us - exclusive offers",
       color: "from-green-500 to-emerald-500"
@@ -62,7 +62,7 @@ const Promotions = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {promotions.map((promo, index) => (
-              <Link key={promo.slug} to={`/${promo.slug}`} className="block">
+              <Link key={promo.slug} to={`/promotions/${promo.slug}`} className="block">
                 <div className={`glass-card rounded-2xl p-8 hover-lift animate-fade-in bg-gradient-to-br ${promo.color} bg-opacity-10`} style={{ animationDelay: `${index * 100}ms` }}>
                   <promo.icon className="w-16 h-16 text-primary mb-4" />
                   <h3 className="text-2xl font-bold mb-3">{promo.title}</h3>
