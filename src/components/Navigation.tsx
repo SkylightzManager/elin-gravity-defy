@@ -18,24 +18,24 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: "Corporate Teambuilding", path: "/#corporate" },
+    { label: "Corporate Teambuilding", path: "/corporate-teambuilding-singapore" },
   ];
 
   const classesDropdown = [
-    { label: "Bungee Workout", path: "/bungee-workout" },
-    { label: "Bungee HIIT", path: "/bungee-hiit" },
-    { label: "Bungee Oscillate", path: "/bungee-oscillate" },
-    { label: "Kids Bungee", path: "/kids-bungee" },
-    { label: "Family Bungee", path: "/family-bungee" },
+    { label: "Bungee Workout", path: "/classes/bungee-workout-singapore" },
+    { label: "Bungee HIIT", path: "/classes/bungee-hiit-singapore" },
+    { label: "Bungee Oscillate", path: "/classes/bungee-oscillate-singapore" },
+    { label: "Kids Bungee", path: "/classes/kids-bungee-singapore" },
+    { label: "Family Bungee", path: "/classes/family-bungee-singapore" },
   ];
 
   const promotionsDropdown = [
-    { label: "WHO2025", path: "/who2025" },
-    { label: "Anniversary", path: "/anniversary" },
-    { label: "Heart of Society", path: "/heart-of-society" },
-    { label: "Kids Bungee", path: "/kids-bungee-promo" },
-    { label: "Trial Class", path: "/trial-class" },
-    { label: "Instructor Certification", path: "/instructor-certification" },
+    { label: "WHO2025", path: "/promotions/who2025-bungee-fitness" },
+    { label: "Anniversary", path: "/promotions/anniversary-deals" },
+    { label: "Heart of Society", path: "/promotions/heart-of-society" },
+    { label: "Kids Bungee", path: "/promotions/kids-bungee-promo" },
+    { label: "Trial Class", path: "/promotions/bungee-trial-class-singapore" },
+    { label: "Instructor Certification", path: "/bungee-instructor-certification-singapore" },
   ];
 
   return (
@@ -112,7 +112,7 @@ const Navigation = () => {
               </div>
 
               <Link
-                to="/about-us"
+                to="/about-elin-dance-studio"
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
               >
                 About Us
@@ -190,7 +190,7 @@ const Navigation = () => {
               </div>
 
               <Link
-                to="/about-us"
+                to="/about-elin-dance-studio"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block py-2 text-foreground hover:text-primary transition-colors font-medium border-t border-border pt-4"
               >

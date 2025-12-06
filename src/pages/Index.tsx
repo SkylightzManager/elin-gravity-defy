@@ -11,6 +11,8 @@ import Contact from "@/components/Contact";
 import FeaturedMedia from "@/components/FeaturedMedia";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import Gallery from "@/components/Gallery";
+import AppDownloadCTA from "@/components/AppDownloadCTA";
 
 const Index = () => {
   return (
@@ -34,11 +36,17 @@ const Index = () => {
       <section id="why-choose">
         <WhyChoose />
       </section>
+      <section id="gallery">
+        <Gallery />
+      </section>
       <section id="milestone">
         <MilestoneJourney />
       </section>
       <section id="faq">
         <FAQ />
+      </section>
+      <section id="app-download">
+        <AppDownloadCTA />
       </section>
       <section id="contact">
         <Contact />
