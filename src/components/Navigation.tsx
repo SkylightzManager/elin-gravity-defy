@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
-import AppDownload from "@/components/AppDownload";
+import { getBookingUrl } from "@/lib/platformDetect";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,211 +18,220 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { label: "Corporate Teambuilding", path: "/corporate-teambuilding-singapore" },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
   ];
 
   const classesDropdown = [
-    { label: "Bungee Workout", path: "/classes/bungee-workout-singapore" },
-    { label: "Bungee HIIT", path: "/classes/bungee-hiit-singapore" },
-    { label: "Bungee Oscillate", path: "/classes/bungee-oscillate-singapore" },
-    { label: "Kids Bungee", path: "/classes/kids-bungee-singapore" },
-    { label: "Family Bungee", path: "/classes/family-bungee-singapore" },
+    { label: "Bungee Workout", href: "#classes" },
+    { label: "Bungee HiiT", href: "#classes" },
+    { label: "Bungee Oscillate", href: "#classes" },
+    { label: "Kids Bungee", href: "#classes" },
+    { label: "Family Bungee", href: "#classes" },
+    { label: "Trial Classes", href: "#classes" },
   ];
 
   const promotionsDropdown = [
-    { label: "WHO2025", path: "/promotions/who2025-bungee-fitness" },
-    { label: "Anniversary", path: "/promotions/anniversary-deals" },
-    { label: "Heart of Society", path: "/promotions/heart-of-society" },
-    { label: "Kids Bungee", path: "/promotions/kids-bungee-promo" },
-    { label: "Trial Class", path: "/promotions/bungee-trial-class-singapore" },
-    { label: "Instructor Certification", path: "/bungee-instructor-certification-singapore" },
+    { label: "WHO2025", href: "#promotions" },
+    { label: "Anniversary", href: "#promotions" },
+    { label: "Heart of Society", href: "#promotions" },
   ];
 
+  const handleBookNow = () => {
+    const bookingUrl = getBookingUrl();
+    window.open(bookingUrl, '_blank', 'noopener,noreferrer');
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-primary/20' 
-          : 'bg-background/80 backdrop-blur-sm border-b border-primary/10'
-      }`}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <img 
-                src={logo} 
-                alt="Elin Dance Studio - Bungee Fitness Singapore" 
-                className="h-16 w-16 transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="hidden lg:block">
-                <h1 className="text-xl font-bold text-gradient-cyan">Elin Dance Studio</h1>
-                <p className="text-xs text-muted-foreground">Singapore's Premier Bungee Fitness Studio</p>
-              </div>
-            </Link>
+          ? 'glass-card border-b border-primary/30' 
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <a href="#home" className="flex items-center gap-2 group">
+            <img 
+              src={logo} 
+              alt="Elin Dance Studio" 
+              className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+            />
+            <span className="font-bold text-xl text-foreground hidden sm:block">
+              Elin Dance <span className="text-primary">Studio</span>
+            </span>
+          </a>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.path}
-                  href={link.path}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                </a>
-              ))}
-
-              {/* Classes Dropdown */}
-              <div className="relative group">
-                <button className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                  <span>Classes</span>
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-primary/20 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  {classesDropdown.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Promotions Dropdown */}
-              <div className="relative group">
-                <button className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                  <span>Promotions</span>
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-primary/20 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  {promotionsDropdown.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <Link
-                to="/about-elin-dance-studio"
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
               >
-                About Us
+                {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </Link>
-
-              <Link
-                to="/contact-us"
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
-              >
-                Contact Us
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </Link>
-
-              {/* App Download Buttons */}
-              <div className="flex items-center space-x-2">
-                <AppDownload />
+              </a>
+            ))}
+            
+            {/* Classes Dropdown */}
+            <div className="relative group">
+              <button className="text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-1">
+                Classes
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                {classesDropdown.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="block px-4 py-2 text-foreground hover:bg-primary/10 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                  >
+                    {item.label}
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle mobile menu"
+            {/* Promotions Dropdown */}
+            <div className="relative group">
+              <button className="text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-1">
+                Promotions
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                {promotionsDropdown.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="block px-4 py-2 text-foreground hover:bg-primary/10 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <a
+              href="#corporate"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+              Corporate Teambuilding
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            </a>
+
+            <a
+              href="#contact"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
+            >
+              Contact Us
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            </a>
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Button 
+              onClick={handleBookNow}
+              className="bg-gradient-cyan hover:glow-cyan text-white font-semibold"
+            >
+              Book Now
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-foreground p-2"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden glass-card border-t border-primary/30 animate-fade-in">
+          <div className="container mx-auto px-4 py-6 space-y-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+              >
+                {link.label}
+              </a>
+            ))}
+            
+            {/* Mobile Classes Dropdown */}
+            <div className="border-t border-border pt-2">
+              <p className="font-semibold text-foreground mb-2">Classes</p>
+              {classesDropdown.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-muted-foreground hover:text-primary transition-colors duration-300 py-1 pl-4"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Mobile Promotions Dropdown */}
+            <div className="border-t border-border pt-2">
+              <p className="font-semibold text-foreground mb-2">Promotions</p>
+              {promotionsDropdown.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-muted-foreground hover:text-primary transition-colors duration-300 py-1 pl-4"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            <a
+              href="#corporate"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2 border-t border-border pt-2"
+            >
+              Corporate Teambuilding
+            </a>
+
+            <a
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+            >
+              Contact Us
+            </a>
+
+            <Button 
+              onClick={handleBookNow}
+              className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold"
+            >
+              Book Now
+            </Button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background border-t border-primary/20 shadow-lg animate-slide-in-right max-h-[calc(100vh-6rem)] overflow-y-auto">
-            <div className="container mx-auto px-4 py-6 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.path}
-                  href={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-2 text-foreground hover:text-primary transition-colors font-medium"
-                >
-                  {link.label}
-                </a>
-              ))}
-
-              {/* Classes Dropdown (Mobile) */}
-              <div className="border-t border-border pt-4">
-                <p className="text-sm font-bold text-muted-foreground mb-2">CLASSES</p>
-                {classesDropdown.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 pl-4 text-foreground hover:text-primary transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-
-              {/* Promotions Dropdown (Mobile) */}
-              <div className="border-t border-border pt-4">
-                <p className="text-sm font-bold text-muted-foreground mb-2">PROMOTIONS</p>
-                {promotionsDropdown.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 pl-4 text-foreground hover:text-primary transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-
-              <Link
-                to="/about-elin-dance-studio"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-2 text-foreground hover:text-primary transition-colors font-medium border-t border-border pt-4"
-              >
-                About Us
-              </Link>
-
-              <Link
-                to="/contact-us"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-2 text-foreground hover:text-primary transition-colors font-medium"
-              >
-                Contact Us
-              </Link>
-
-              {/* App Download Buttons (Mobile) */}
-              <div className="pt-4 border-t border-border">
-                <p className="text-sm font-bold text-muted-foreground mb-3">DOWNLOAD APP</p>
-                <AppDownload />
-              </div>
-            </div>
-          </div>
-        )}
-      </nav>
-    </>
+      )}
+    </nav>
   );
 };
 

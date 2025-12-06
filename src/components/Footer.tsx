@@ -1,203 +1,153 @@
-import { Facebook, Instagram, Mail, MapPin, Phone, Heart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Instagram, Facebook, Mail, Phone, MapPin, Heart } from "lucide-react";
 import logo from "@/assets/logo.png";
 import AppDownload from "@/components/AppDownload";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-background to-secondary border-t border-primary/20">
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* About Section */}
-          <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-3 group">
-              <img 
-                src={logo} 
-                alt="Elin Dance Studio - Bungee Fitness Singapore" 
-                className="h-16 w-16 transition-transform duration-300 group-hover:scale-110"
-              />
-              <div>
-                <h3 className="text-xl font-bold text-gradient-cyan">Elin Dance Studio</h3>
-                <p className="text-xs text-muted-foreground">Bungee Fitness Singapore</p>
-              </div>
-            </Link>
-            <p className="text-muted-foreground text-sm">
-              Singapore's premier bungee fitness studio. Experience the thrill of flying while getting fit. 
-              Low-impact, high-intensity workouts for all ages (4-66).
+    <footer className="bg-secondary border-t border-primary/20 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <img src={logo} alt="Elin Dance Studio - Singapore Bungee Fitness Logo" className="h-12 w-12" />
+              <span className="font-bold text-lg text-foreground">
+                Elin Dance <span className="text-primary">Studio</span>
+              </span>
+            </div>
+            <p className="text-muted-foreground text-sm mb-4">
+              Singapore's #1 bungee fitness and aerial workout studio near Alexandra. Low-impact, high-intensity training for all ages 4-66.
             </p>
-            <p className="text-primary font-semibold text-sm italic">
-              Every Mind Matters, Every Dream Counts
-            </p>
+            <div className="flex gap-3">
+              <a 
+                href="https://www.instagram.com/elindancestudio" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-gradient-cyan transition-all duration-300"
+                aria-label="Follow Elin Dance Studio on Instagram"
+              >
+                <Instagram className="w-5 h-5 text-primary hover:text-white" />
+              </a>
+              <a 
+                href="https://www.facebook.com/elindancestudio" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-gradient-cyan transition-all duration-300"
+                aria-label="Like Elin Dance Studio on Facebook"
+              >
+                <Facebook className="w-5 h-5 text-primary hover:text-white" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold text-foreground mb-4">Quick Links</h4>
+            <h3 className="text-foreground font-bold mb-4">Bungee Fitness Studio</h3>
             <ul className="space-y-2">
-              <li>
-                <Link to="/classes" className="text-muted-foreground hover:text-primary transition-colors">
-                  Classes
-                </Link>
-              </li>
-              <li>
-                <Link to="/promotions" className="text-muted-foreground hover:text-primary transition-colors">
-                  Promotions
-                </Link>
-              </li>
-              <li>
-                <Link to="/instructor-certification" className="text-muted-foreground hover:text-primary transition-colors">
-                  Instructor Certification
-                </Link>
-              </li>
-              <li>
-                <Link to="/about-us" className="text-muted-foreground hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact-us" className="text-muted-foreground hover:text-primary transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/media" className="text-muted-foreground hover:text-primary transition-colors">
-                  Media
-                </Link>
-              </li>
+              {[
+                { name: "About Bungee Workout", href: "#about" },
+                { name: "Bungee Fitness Classes", href: "#classes" },
+                { name: "Why Choose Us", href: "#why-choose" },
+                { name: "FAQ", href: "#faq" },
+                { name: "Book Trial Class", href: "#contact" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <a 
+                    href={link.href} 
+                    className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Classes */}
           <div>
-            <h4 className="text-lg font-bold text-foreground mb-4">Contact Us</h4>
+            <h3 className="text-foreground font-bold mb-4">Classes in Singapore</h3>
+            <ul className="space-y-2">
+              {[
+                "Bungee Fitness Workout",
+                "Bungee Yoga Classes",
+                "Aerial Fitness Training",
+                "Kids Fitness (Age 4+)",
+                "Family Bungee Classes"
+              ].map((classType) => (
+                <li key={classType}>
+                  <a 
+                    href="#classes" 
+                    className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                  >
+                    {classType}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-foreground font-bold mb-4">Visit Our Studio</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">
-                  31 Bukit Merah Central, #04-04, Singapore 159836<br />
-                  (Near Alexandra & Labrador Park MRT)
-                </span>
+              <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                <span>Near Alexandra & Labrador Park MRT, Singapore</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+6588021827" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  +65 8802 1827
-                </a>
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <a href="tel:+6512345678" className="hover:text-primary transition-colors">+65 1234 5678</a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:enquiry@elindance.com.sg" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  enquiry@elindance.com.sg
-                </a>
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                <a href="mailto:hello@elindance.sg" className="hover:text-primary transition-colors">hello@elindance.sg</a>
               </li>
             </ul>
-            
-            {/* Social Links */}
-            <div className="flex items-center gap-4 mt-6">
-              <a
-                href="https://www.facebook.com/elindancestudio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-              >
-                <Facebook className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://www.instagram.com/elindancestudio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-              >
-                <Instagram className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
-              </a>
-            </div>
-          </div>
-
-          {/* Download App */}
-          <div>
-            <h4 className="text-lg font-bold text-foreground mb-4">Download Our App</h4>
-            <p className="text-muted-foreground text-sm mb-4">
-              Book classes, track progress, and stay updated with our mobile app.
-            </p>
-            <AppDownload />
-            
-            {/* Newsletter */}
-            <div className="mt-6">
-              <h4 className="text-sm font-bold text-foreground mb-3">Join Our Mailing List</h4>
-              <form action="https://formsubmit.co/imperialgamerop@gmail.com" method="POST" className="flex gap-2">
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_subject" value="New Newsletter Signup - Elin Dance Studio" />
-                <Input 
-                  type="email" 
-                  name="email" 
-                  placeholder="Your email" 
-                  required 
-                  className="text-sm"
-                />
-                <Button type="submit" size="sm" className="bg-gradient-cyan hover:glow-cyan text-white">
-                  Join
-                </Button>
-              </form>
-            </div>
           </div>
         </div>
-      </div>
 
-      {/* We Are Also On / In Support Of Section */}
-      <div className="border-t border-primary/20 bg-secondary/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid md:grid-cols-2 gap-8 text-center md:text-left">
-            {/* We Are Also On */}
+        {/* App Download Section */}
+        <div className="border-t border-primary/20 pt-8 mb-8">
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-foreground mb-2">Download Our App</h3>
+            <p className="text-muted-foreground text-sm">Book classes on the go</p>
+          </div>
+          <div className="flex justify-center">
+            <AppDownload />
+          </div>
+        </div>
+
+        {/* Partnership Section */}
+        <div className="border-t border-primary/20 pt-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h4 className="text-sm font-bold text-muted-foreground mb-3">WE ARE ALSO ON</h4>
-              <a 
-                href="https://www.lazada.sg/shop/elin-dance-studio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <div className="bg-gradient-to-br from-pink-500 to-purple-600 px-8 py-3 rounded-lg hover:scale-105 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">Lazada</span>
+              <h3 className="text-lg font-bold text-foreground mb-4">We Are Also On:</h3>
+              <div className="flex items-center gap-4">
+                <div className="bg-gradient-to-br from-pink-500 to-purple-600 px-6 py-3 rounded-lg">
+                  <span className="text-white font-bold">Lazada</span>
                 </div>
-              </a>
+              </div>
             </div>
-            
-            {/* In Support Of */}
             <div>
-              <h4 className="text-sm font-bold text-muted-foreground mb-3">IN SUPPORT OF</h4>
-              <div className="inline-block">
-                <div className="bg-gradient-to-br from-pink-400 to-orange-400 px-8 py-3 rounded-lg flex items-center gap-2">
+              <h3 className="text-lg font-bold text-foreground mb-4">In support of:</h3>
+              <div className="flex items-center gap-4">
+                <div className="bg-gradient-to-br from-pink-400 to-orange-400 px-6 py-3 rounded-lg flex items-center gap-2">
                   <Heart className="w-5 h-5 text-white" fill="white" />
-                  <div>
-                    <p className="text-white font-bold">Made for Families</p>
-                    <p className="text-white text-xs">By Famvues</p>
-                  </div>
+                  <span className="text-white font-bold">Famvues</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-primary/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {new Date().getFullYear()} Elin Dance Studio Pte Ltd. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
-              </Link>
-            </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-primary/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground text-sm text-center md:text-left">
+            © {new Date().getFullYear()} Elin Dance Studio - Singapore's Premier Bungee Fitness & Aerial Workout Centre. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-sm">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

@@ -129,14 +129,6 @@ All colors MUST be HSL.
     }
   }
 
-  .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-1;
-  }
-
-  .soft-shadow {
-    box-shadow: 0 4px 20px rgba(17, 224, 255, 0.1);
-  }
-
   .script-font {
     font-family: 'Dancing Script', cursive;
   }
