@@ -5,6 +5,18 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import BungeeWorkout from "./pages/BungeeWorkout";
+import BungeeHiiT from "./pages/BungeeHiiT";
+import BungeeOscillate from "./pages/BungeeOscillate";
+import KidsBungee from "./pages/KidsBungee";
+import FamilyBungee from "./pages/FamilyBungee";
+import TrialClasses from "./pages/TrialClasses";
+import WHO2025 from "./pages/WHO2025";
+import Anniversary from "./pages/Anniversary";
+import HeartOfSociety from "./pages/HeartOfSociety";
+import CorporateTeambuilding from "./pages/CorporateTeambuilding";
+import ContactUs from "./pages/ContactUs";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +28,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/classes/bungee-workout" element={<BungeeWorkout />} />
+          <Route path="/classes/bungee-hiit" element={<BungeeHiiT />} />
+          <Route path="/classes/bungee-oscillate" element={<BungeeOscillate />} />
+          <Route path="/classes/kids-bungee" element={<KidsBungee />} />
+          <Route path="/classes/family-bungee" element={<FamilyBungee />} />
+          <Route path="/classes/trial-classes" element={<TrialClasses />} />
+          <Route path="/promotions/who2025" element={<WHO2025 />} />
+          <Route path="/promotions/anniversary" element={<Anniversary />} />
+          <Route path="/promotions/heart-of-society" element={<HeartOfSociety />} />
+          <Route path="/corporate-teambuilding" element={<CorporateTeambuilding />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/about" element={<AboutUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
