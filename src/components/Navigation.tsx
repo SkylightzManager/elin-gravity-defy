@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Dumbbell, Zap, Music, Baby, Users, Gift, Heart, Calendar } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { getBookingUrl } from "@/lib/platformDetect";
+import { classNavItems, promotionNavItems } from "@/lib/navItems";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,19 +18,8 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const classesDropdown = [
-    { label: "Bungee Workout", href: "/classes/bungee-workout", icon: Dumbbell, description: "High-energy fitness training" },
-    { label: "Bungee HiiT", href: "/classes/bungee-hiit", icon: Zap, description: "Intense interval training" },
-    { label: "Bungee Oscillate", href: "/classes/bungee-oscillate", icon: Music, description: "Rhythmic dance movements" },
-    { label: "Kids Bungee", href: "/classes/kids-bungee", icon: Baby, description: "Fun fitness for children" },
-    { label: "Family Bungee", href: "/classes/family-bungee", icon: Users, description: "Bonding through fitness" },
-  ];
-
-  const promotionsDropdown = [
-    { label: "WHO2025", href: "/promotions/who2025", icon: Calendar, description: "Special 2025 campaign" },
-    { label: "Anniversary", href: "/promotions/anniversary", icon: Gift, description: "Celebration deals" },
-    { label: "Heart of Society", href: "/promotions/heart-of-society", icon: Heart, description: "Community program" },
-  ];
+  const classesDropdown = classNavItems;
+  const promotionsDropdown = promotionNavItems;
 
   const handleBookNow = () => {
     const bookingUrl = getBookingUrl();
@@ -79,10 +69,13 @@ const Navigation = () => {
             
             {/* Classes Dropdown */}
             <div className="relative group">
-              <button className="text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-1">
+              <Link
+                to="/classes"
+                className="text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-1"
+              >
                 Classes
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-              </button>
+              </Link>
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-background border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
                 <div className="grid grid-cols-2 gap-3">
                   {classesDropdown.map((item) => (
@@ -106,10 +99,13 @@ const Navigation = () => {
 
             {/* Promotions Dropdown */}
             <div className="relative group">
-              <button className="text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-1">
+              <Link
+                to="/promotions"
+                className="text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-1"
+              >
                 Promotions
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-              </button>
+              </Link>
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[400px] bg-background border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
                 <div className="grid grid-cols-1 gap-3">
                   {promotionsDropdown.map((item) => (
@@ -191,7 +187,14 @@ const Navigation = () => {
             
             {/* Mobile Classes Dropdown */}
             <div className="border-t border-border pt-4">
-              <p className="font-semibold text-foreground mb-3">Classes</p>
+              <Link
+                to="/classes"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="font-semibold text-foreground mb-3 inline-flex items-center gap-2 hover:text-primary transition-colors"
+              >
+                Classes
+                <ChevronDown className="w-4 h-4" />
+              </Link>
               <div className="grid grid-cols-1 gap-2">
                 {classesDropdown.map((item) => (
                   <Link
@@ -214,7 +217,14 @@ const Navigation = () => {
 
             {/* Mobile Promotions Dropdown */}
             <div className="border-t border-border pt-4">
-              <p className="font-semibold text-foreground mb-3">Promotions</p>
+              <Link
+                to="/promotions"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="font-semibold text-foreground mb-3 inline-flex items-center gap-2 hover:text-primary transition-colors"
+              >
+                Promotions
+                <ChevronDown className="w-4 h-4" />
+              </Link>
               <div className="grid grid-cols-1 gap-2">
                 {promotionsDropdown.map((item) => (
                   <Link
