@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Dumbbell, Zap, Music, Baby, Users, Gift, Heart, Calendar } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { getBookingUrl } from "@/lib/platformDetect";
 
@@ -18,18 +18,17 @@ const Navigation = () => {
   }, []);
 
   const classesDropdown = [
-    { label: "Bungee Workout", href: "/classes/bungee-workout" },
-    { label: "Bungee HiiT", href: "/classes/bungee-hiit" },
-    { label: "Bungee Oscillate", href: "/classes/bungee-oscillate" },
-    { label: "Kids Bungee", href: "/classes/kids-bungee" },
-    { label: "Family Bungee", href: "/classes/family-bungee" },
-    { label: "Trial Classes", href: "/classes/trial-classes" },
+    { label: "Bungee Workout", href: "/classes/bungee-workout", icon: Dumbbell, description: "High-energy fitness training" },
+    { label: "Bungee HiiT", href: "/classes/bungee-hiit", icon: Zap, description: "Intense interval training" },
+    { label: "Bungee Oscillate", href: "/classes/bungee-oscillate", icon: Music, description: "Rhythmic dance movements" },
+    { label: "Kids Bungee", href: "/classes/kids-bungee", icon: Baby, description: "Fun fitness for children" },
+    { label: "Family Bungee", href: "/classes/family-bungee", icon: Users, description: "Bonding through fitness" },
   ];
 
   const promotionsDropdown = [
-    { label: "WHO2025", href: "/promotions/who2025" },
-    { label: "Anniversary", href: "/promotions/anniversary" },
-    { label: "Heart of Society", href: "/promotions/heart-of-society" },
+    { label: "WHO2025", href: "/promotions/who2025", icon: Calendar, description: "Special 2025 campaign" },
+    { label: "Anniversary", href: "/promotions/anniversary", icon: Gift, description: "Celebration deals" },
+    { label: "Heart of Society", href: "/promotions/heart-of-society", icon: Heart, description: "Community program" },
   ];
 
   const handleBookNow = () => {
@@ -82,18 +81,26 @@ const Navigation = () => {
             <div className="relative group">
               <button className="text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-1">
                 Classes
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                {classesDropdown.map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    className="block px-4 py-2 text-foreground hover:bg-primary/10 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-background border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
+                <div className="grid grid-cols-2 gap-3">
+                  {classesDropdown.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.href}
+                      className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/10 transition-all duration-300 group/card"
+                    >
+                      <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover/card:bg-primary group-hover/card:text-primary-foreground transition-colors">
+                        <item.icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground group-hover/card:text-primary transition-colors">{item.label}</p>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -101,18 +108,26 @@ const Navigation = () => {
             <div className="relative group">
               <button className="text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-1">
                 Promotions
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                {promotionsDropdown.map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    className="block px-4 py-2 text-foreground hover:bg-primary/10 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[400px] bg-background border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
+                <div className="grid grid-cols-1 gap-3">
+                  {promotionsDropdown.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.href}
+                      className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/10 transition-all duration-300 group/card"
+                    >
+                      <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover/card:bg-primary group-hover/card:text-primary-foreground transition-colors">
+                        <item.icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground group-hover/card:text-primary transition-colors">{item.label}</p>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -175,33 +190,49 @@ const Navigation = () => {
             </Link>
             
             {/* Mobile Classes Dropdown */}
-            <div className="border-t border-border pt-2">
-              <p className="font-semibold text-foreground mb-2">Classes</p>
-              {classesDropdown.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-muted-foreground hover:text-primary transition-colors duration-300 py-1 pl-4"
-                >
-                  {item.label}
-                </Link>
-              ))}
+            <div className="border-t border-border pt-4">
+              <p className="font-semibold text-foreground mb-3">Classes</p>
+              <div className="grid grid-cols-1 gap-2">
+                {classesDropdown.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 hover:bg-primary/10 transition-colors"
+                  >
+                    <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                      <item.icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">{item.label}</p>
+                      <p className="text-xs text-muted-foreground">{item.description}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
 
             {/* Mobile Promotions Dropdown */}
-            <div className="border-t border-border pt-2">
-              <p className="font-semibold text-foreground mb-2">Promotions</p>
-              {promotionsDropdown.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-muted-foreground hover:text-primary transition-colors duration-300 py-1 pl-4"
-                >
-                  {item.label}
-                </Link>
-              ))}
+            <div className="border-t border-border pt-4">
+              <p className="font-semibold text-foreground mb-3">Promotions</p>
+              <div className="grid grid-cols-1 gap-2">
+                {promotionsDropdown.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 hover:bg-primary/10 transition-colors"
+                  >
+                    <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                      <item.icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">{item.label}</p>
+                      <p className="text-xs text-muted-foreground">{item.description}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
 
             <Link
