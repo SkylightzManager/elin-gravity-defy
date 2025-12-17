@@ -124,8 +124,16 @@ const Navigation = () => {
                     </Link>
                   ))}
                 </div>
-              </div>
             </div>
+            </div>
+
+            <Link
+              to="/milestone"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
+            >
+              Milestone
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            </Link>
 
             <Link
               to="/corporate-teambuilding"
@@ -242,13 +250,21 @@ const Navigation = () => {
                     </div>
                   </Link>
                 ))}
-              </div>
             </div>
+            </div>
+
+            <Link
+              to="/milestone"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2 border-t border-border pt-2"
+            >
+              Milestone
+            </Link>
 
             <Link
               to="/corporate-teambuilding"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2 border-t border-border pt-2"
+              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
             >
               Corporate Teambuilding
             </Link>

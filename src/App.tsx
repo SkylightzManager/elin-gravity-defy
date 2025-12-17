@@ -19,6 +19,7 @@ import HeartOfSociety from "./pages/HeartOfSociety";
 import CorporateTeambuilding from "./pages/CorporateTeambuilding";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
+import Milestone from "./pages/Milestone";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/promotions/anniversary" element={<Anniversary />} />
           <Route path="/promotions/heart-of-society" element={<HeartOfSociety />} />
           <Route path="/corporate-teambuilding" element={<CorporateTeambuilding />} />
+          <Route path="/milestone" element={<Milestone />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
