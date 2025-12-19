@@ -1,92 +1,95 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import AppDownload from "@/components/AppDownload";
-import { Button } from "@/components/ui/button";
-import { Heart, Users, Handshake, Award } from "lucide-react";
-import { getBookingUrl } from "@/lib/platformDetect";
+import { Phone } from "lucide-react";
 
 const HeartOfSociety = () => {
-  const handleBookNow = () => {
-    const bookingUrl = getBookingUrl();
-    window.open(bookingUrl, '_blank', 'noopener,noreferrer');
-  };
-
-  const highlights = [
-    { icon: Heart, title: "Community Focus", description: "Supporting local community wellness" },
-    { icon: Users, title: "Inclusive Pricing", description: "Special rates for community members" },
-    { icon: Handshake, title: "Partnerships", description: "Collaborating with local organizations" },
-    { icon: Award, title: "Impact Driven", description: "Making fitness accessible to all" },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       
+      {/* Header Banner */}
+      <section className="pt-24 pb-4 bg-primary">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-white font-semibold tracking-[0.3em] uppercase">
+            E L I N &nbsp; D A N C E &nbsp; S T U D I O
+          </p>
+        </div>
+      </section>
+
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary/10 to-background">
+      <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Heart of <span className="text-primary">Society</span>
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">
+              HEART OF SOCIETY
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Our commitment to giving back. The Heart of Society program makes bungee 
-              fitness accessible to everyone, with special initiatives for community 
-              wellness and inclusion.
+            <p className="text-2xl md:text-3xl text-primary italic">
+              Free Sessions
             </p>
-            <Button 
-              onClick={handleBookNow}
-              size="lg"
-              className="bg-gradient-cyan hover:glow-cyan text-white font-semibold"
-            >
-              Learn More
-            </Button>
           </div>
-        </div>
-      </section>
 
-      {/* Highlights Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Community Initiatives</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="text-center p-6 rounded-xl border border-border bg-card">
-                <highlight.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{highlight.title}</h3>
-                <p className="text-muted-foreground">{highlight.description}</p>
+          {/* Content Grid */}
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* First Row */}
+              <div className="glass-card rounded-2xl overflow-hidden">
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <p className="text-6xl mb-4">🤸‍♀️</p>
+                    <p className="text-muted-foreground">Bungee Fitness Class</p>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <div className="glass-card rounded-2xl p-8 bg-primary/10 flex items-center">
+                <p className="text-foreground text-lg leading-relaxed">
+                  Elin Dance Studio's "Heart of Society Package" offers a bungee fitness class for kids with developmental needs, promoting physical, emotional, and social growth through fun, dynamic exercises that encourage inclusion and empowerment.
+                </p>
+              </div>
 
-      {/* Details Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">Making a Difference</h2>
-            <div className="space-y-6 text-muted-foreground">
-              <p>
-                The Heart of Society program is our way of ensuring that the joy and 
-                benefits of bungee fitness are available to everyone in Singapore. 
-                We believe that wellness should not be a privilege but a right.
-              </p>
-              <p>
-                Through partnerships with community centers, schools, and non-profit 
-                organizations, we offer subsidized classes, free workshops, and special 
-                programs for underserved communities.
-              </p>
-              <p>
-                Want to participate or support our community initiatives? Contact us 
-                to learn how you can get involved or benefit from this program.
+              {/* Second Row */}
+              <div className="glass-card rounded-2xl p-8 bg-primary/10 flex items-center">
+                <p className="text-foreground text-lg leading-relaxed">
+                  Our class offers a safe, inclusive space for the children, focusing on motor skills, confidence, and social connections through playful, adaptive fitness activities in small groups.
+                </p>
+              </div>
+              <div className="glass-card rounded-2xl overflow-hidden">
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <p className="text-6xl mb-4">🎈</p>
+                    <p className="text-muted-foreground">Inclusive Fitness Activities</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How to Sign Up */}
+            <div className="text-center mt-16">
+              <h2 className="text-2xl font-bold text-foreground mb-4">HOW TO SIGN UP</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                To apply for our bungee fitness class, contact us via WhatsApp or visit our website.
+                <br />
+                Limited spots are available so do apply soon to secure a place!
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <AppDownload />
+      {/* WhatsApp Banner */}
+      <section className="py-8 bg-primary">
+        <div className="container mx-auto px-4">
+          <a 
+            href="https://wa.me/6588799689" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 text-white text-2xl font-semibold hover:opacity-80 transition-opacity"
+          >
+            <Phone className="w-8 h-8" />
+            <span>8879 9689</span>
+          </a>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
