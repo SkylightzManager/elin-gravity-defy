@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { getBookingUrl } from "@/lib/platformDetect";
 import { classNavItems, promotionNavItems } from "@/lib/navItems";
+import AppDownload from "@/components/AppDownload";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -152,8 +153,9 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button & App Download */}
+          <div className="hidden md:flex items-center gap-4">
+            <AppDownload size="small" />
             <Button 
               onClick={handleBookNow}
               className="bg-gradient-cyan hover:glow-cyan text-white font-semibold"
