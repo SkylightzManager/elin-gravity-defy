@@ -8,7 +8,7 @@ const CorporateTeambuildingPage = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-20">
-        <CorporateTeamBuilding />
+        <CorporateTeamBuilding showFullContent={true} />
       </div>
       <AppDownload />
       <Footer />
