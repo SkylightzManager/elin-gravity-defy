@@ -1,4 +1,4 @@
-import { Users, User, Baby, Scale, Shield } from "lucide-react";
+import { Users, User, Baby, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -17,7 +17,11 @@ const themes = [
   "Team Bonding",
 ];
 
-const CorporateTeamBuilding = () => {
+interface CorporateTeamBuildingProps {
+  showFullContent?: boolean;
+}
+
+const CorporateTeamBuilding = ({ showFullContent = false }: CorporateTeamBuildingProps) => {
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
   return (
@@ -79,6 +83,62 @@ const CorporateTeamBuilding = () => {
           </div>
         </div>
 
+        {/* Full Content - Only shown on dedicated page */}
+        {showFullContent && (
+          <>
+            {/* Collaborated With Section */}
+            <div className="max-w-4xl mx-auto mb-16 text-center">
+              <h3 className="text-2xl font-bold mb-8">Collaborated with:</h3>
+              <p className="text-muted-foreground">(Partner logos would be displayed here)</p>
+            </div>
+
+            {/* Testimonial */}
+            <div className="max-w-3xl mx-auto mb-16 text-center">
+              <div className="text-primary text-2xl mb-4">★★★★★</div>
+              <p className="text-lg italic text-muted-foreground mb-4">
+                "Love the bungee fitness session at Elin Dance studio. All my friends and colleagues enjoyed the session. The instructors were very patient to guide us through in a fun way. Definitely, a great choice for team bonding and gathering activities for friends & family. Check it out now!"
+              </p>
+              <p className="font-medium text-foreground">- Joey LH, from Sisley Singapore Pte Ltd</p>
+            </div>
+
+            {/* Booking Form */}
+            <div className="max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-center mb-8">Book a Session</h3>
+              <form className="space-y-6 p-8 rounded-xl border border-border bg-card">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Input placeholder="Your Name" />
+                  <Input placeholder="Company Name" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Input placeholder="Email" type="email" />
+                  <Input placeholder="Phone Number" type="tel" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Input placeholder="Group Size" type="number" />
+                  <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
+                    <option value="">Time Slot</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                  </select>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-3">Preferred Days:</p>
+                  <div className="flex flex-wrap gap-4">
+                    {days.map((day) => (
+                      <label key={day} className="flex items-center space-x-2">
+                        <Checkbox />
+                        <span className="text-sm">{day}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground">Disclaimer: Class availability depends on the number of pax.</p>
+                <Button type="submit" className="w-full">Send</Button>
+              </form>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
