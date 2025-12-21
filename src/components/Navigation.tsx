@@ -51,7 +51,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
             <Link
               to="/"
               className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
@@ -154,8 +154,8 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button & App Download */}
-          <div className="hidden md:flex items-center gap-4">
-            <AppDownload size="small" />
+          <div className="hidden lg:flex items-center gap-4">
+            <AppDownload size="default" />
             <Button 
               onClick={handleBookNow}
               className="bg-gradient-cyan hover:glow-cyan text-white font-semibold"
@@ -167,7 +167,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-foreground p-2"
+            className="lg:hidden text-foreground p-2"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -177,7 +177,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-card border-t border-primary/30 animate-fade-in">
+        <div className="lg:hidden glass-card border-t border-primary/30 animate-fade-in">
           <div className="container mx-auto px-4 py-6 space-y-4">
             <Link
               to="/"
@@ -279,12 +279,15 @@ const Navigation = () => {
               Contact Us
             </Link>
 
-            <Button 
-              onClick={handleBookNow}
-              className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold"
-            >
-              Book Now
-            </Button>
+            <div className="flex flex-col gap-4 pt-4 border-t border-border">
+              <AppDownload size="large" className="justify-center" />
+              <Button 
+                onClick={handleBookNow}
+                className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold"
+              >
+                Book Now
+              </Button>
+            </div>
           </div>
         </div>
       )}
