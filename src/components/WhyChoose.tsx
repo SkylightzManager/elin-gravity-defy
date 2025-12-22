@@ -1,30 +1,35 @@
-import { Award, Shield, Users, Sparkles } from "lucide-react";
-import instructorImage from "@/assets/instructor.jpg";
+import { Award, Shield, Users } from "lucide-react";
+import whyMainImage from "@/assets/why-main.jpg";
+import whyCertificationImage from "@/assets/why-certification.jpg";
+import whyEquipmentImage from "@/assets/why-equipment.jpg";
+import whyGuidanceImage from "@/assets/why-guidance.jpg";
 
 const reasons = [
   {
     icon: Award,
     title: "International Certification",
     description: "All bungee fitness instructors at our Singapore studio are internationally certified and trained in the highest safety protocols",
+    image: whyCertificationImage,
   },
   {
     icon: Shield,
     title: "Premium Bungee Equipment",
     description: "State-of-the-art bungee systems meeting international safety standards with regular maintenance - Singapore's safest aerial fitness studio",
+    image: whyEquipmentImage,
   },
   {
     icon: Users,
     title: "Expert Personal Guidance",
     description: "Small bungee fitness class sizes ensure personalized attention and proper technique guidance for every member in Singapore",
-  },
-  {
-    icon: Sparkles,
-    title: "Proven Fitness Results",
-    description: "Our bungee workout members see visible results within weeks - improved fitness, strength, weight loss, and confidence at Singapore's #1 studio",
+    image: whyGuidanceImage,
   },
 ];
 
-const WhyChoose = () => {
+interface WhyChooseProps {
+  showFullContent?: boolean;
+}
+
+const WhyChoose = ({ showFullContent = true }: WhyChooseProps) => {
   return (
     <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
       {/* Decorative Elements */}
@@ -71,21 +76,21 @@ const WhyChoose = () => {
           <div className="relative order-1 lg:order-2 animate-fade-in">
             <div className="relative rounded-2xl overflow-hidden glow-cyan-strong">
               <img 
-                src={instructorImage} 
+                src={whyMainImage} 
                 alt="Certified bungee fitness instructor at Elin Dance Studio Singapore guiding student in aerial workout near Alexandra"
-                className="w-full h-auto"
+                className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
 
             {/* Floating Badge 1 */}
-            <div className="absolute top-6 -left-6 glass-card p-4 rounded-xl border-2 border-primary animate-float">
+            <div className="absolute top-6 -left-6 glass-card p-4 rounded-xl border-2 border-primary animate-float hidden sm:block">
               <p className="text-primary font-bold text-sm">Singapore's First Bungee Fitness</p>
               <p className="text-foreground text-xs">Established 2019</p>
             </div>
 
             {/* Floating Badge 2 */}
-            <div className="absolute bottom-6 -right-6 glass-card p-4 rounded-xl border-2 border-primary animate-float" style={{ animationDelay: '2s' }}>
+            <div className="absolute bottom-6 -right-6 glass-card p-4 rounded-xl border-2 border-primary animate-float hidden sm:block" style={{ animationDelay: '2s' }}>
               <p className="text-primary font-bold text-sm">100% Safety Record</p>
               <p className="text-foreground text-xs">Certified Instructors</p>
             </div>
@@ -93,20 +98,22 @@ const WhyChoose = () => {
         </div>
 
         {/* Certifications Banner */}
-        <div className="glass-card p-8 rounded-2xl text-center max-w-4xl mx-auto animate-fade-in">
-          <h3 className="text-2xl font-bold text-foreground mb-4">
-            Internationally Recognized Bungee Fitness Certifications in Singapore
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Our bungee workout instructors hold certifications from leading global fitness organizations
-          </p>
-          <div className="flex flex-wrap justify-center gap-6 text-primary font-semibold">
-            <span>• ACE Certified Trainer</span>
-            <span>• AFAA Fitness Professional</span>
-            <span>• Bungee Fitness International</span>
-            <span>• First Aid & CPR Certified</span>
+        {showFullContent && (
+          <div className="glass-card p-8 rounded-2xl text-center max-w-4xl mx-auto animate-fade-in">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Internationally Recognized Bungee Fitness Certifications in Singapore
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Our bungee workout instructors hold certifications from leading global fitness organizations
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 text-primary font-semibold">
+              <span>• ACE Certified Trainer</span>
+              <span>• AFAA Fitness Professional</span>
+              <span>• Bungee Fitness International</span>
+              <span>• First Aid & CPR Certified</span>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

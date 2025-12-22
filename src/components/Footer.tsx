@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import AppDownload from "@/components/AppDownload";
 
@@ -9,12 +10,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <img src={logo} alt="Elin Dance Studio - Singapore Bungee Fitness Logo" className="h-12 w-12" />
               <span className="font-bold text-lg text-foreground">
                 Elin Dance <span className="text-primary">Studio</span>
               </span>
-            </div>
+            </Link>
             <p className="text-muted-foreground text-sm mb-4">
               Singapore's #1 bungee fitness and aerial workout studio near Alexandra. Low-impact, high-intensity training for all ages 4-66.
             </p>
@@ -44,22 +45,46 @@ const Footer = () => {
           <div>
             <h3 className="text-foreground font-bold mb-4">Bungee Fitness Studio</h3>
             <ul className="space-y-2">
-              {[
-                { name: "About Bungee Workout", href: "#about" },
-                { name: "Bungee Fitness Classes", href: "#classes" },
-                { name: "Why Choose Us", href: "#why-choose" },
-                { name: "FAQ", href: "#faq" },
-                { name: "Book Trial Class", href: "#contact" }
-              ].map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href} 
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link 
+                  to="/about" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  About Bungee Workout
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/classes" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  Bungee Fitness Classes
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/#why-choose" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  Why Choose Us
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/#faq" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/contact" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  Book Trial Class
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -67,22 +92,46 @@ const Footer = () => {
           <div>
             <h3 className="text-foreground font-bold mb-4">Classes in Singapore</h3>
             <ul className="space-y-2">
-              {[
-                "Bungee Fitness Workout",
-                "Bungee Yoga Classes",
-                "Aerial Fitness Training",
-                "Kids Fitness (Age 4+)",
-                "Family Bungee Classes"
-              ].map((classType) => (
-                <li key={classType}>
-                  <a 
-                    href="#classes" 
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
-                  >
-                    {classType}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link 
+                  to="/bungee-workout" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  Bungee Fitness Workout
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/bungee-oscillate" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  Bungee Yoga Classes
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/bungee-hiit" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  Aerial Fitness Training
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/kids-bungee" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  Kids Fitness (Age 4+)
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/family-bungee" 
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  Family Bungee Classes
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -123,18 +172,28 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-bold text-foreground mb-4">We Are Also On:</h3>
               <div className="flex items-center gap-4">
-                <div className="bg-gradient-to-br from-pink-500 to-purple-600 px-6 py-3 rounded-lg">
+                <a 
+                  href="https://www.lazada.sg" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-br from-pink-500 to-purple-600 px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+                >
                   <span className="text-white font-bold">Lazada</span>
-                </div>
+                </a>
               </div>
             </div>
             <div>
               <h3 className="text-lg font-bold text-foreground mb-4">In support of:</h3>
               <div className="flex items-center gap-4">
-                <div className="bg-gradient-to-br from-pink-400 to-orange-400 px-6 py-3 rounded-lg flex items-center gap-2">
+                <a 
+                  href="https://www.famvues.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-br from-pink-400 to-orange-400 px-6 py-3 rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity"
+                >
                   <Heart className="w-5 h-5 text-white" fill="white" />
                   <span className="text-white font-bold">Famvues</span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -146,8 +205,8 @@ const Footer = () => {
             © {new Date().getFullYear()} Elin Dance Studio - Singapore's Premier Bungee Fitness & Aerial Workout Centre. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

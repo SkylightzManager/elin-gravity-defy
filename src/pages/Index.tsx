@@ -28,7 +28,7 @@ const Index = () => {
         <Testimonials />
       </section>
       <section id="why-choose">
-        <WhyChoose />
+        <WhyChoose showFullContent={false} />
       </section>
       <section id="milestone">
         <MilestoneJourney />
