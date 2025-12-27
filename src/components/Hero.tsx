@@ -11,6 +11,10 @@ const Hero = () => {
     window.open(bookingUrl, '_blank', 'noopener,noreferrer');
   };
 
+  const handleWatchVideo = () => {
+    window.open('https://www.youtube.com/watch?v=VJXRq9FzWNQ', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
@@ -80,6 +84,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline"
+            onClick={handleWatchVideo}
             className="glass-card border-primary text-foreground hover:bg-primary/10 font-semibold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-all duration-300 transform hover:scale-105 group bg-background/80 backdrop-blur-sm w-full sm:w-auto"
           >
             <Play className="mr-2 group-hover:scale-110 transition-transform w-4 h-4 sm:w-5 sm:h-5" />

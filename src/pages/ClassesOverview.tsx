@@ -6,6 +6,20 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { classNavItems } from "@/lib/navItems";
 import { useSeo } from "@/hooks/useSeo";
+import bungeeWorkoutImage from "@/media/Elin Dance Studio Singapore - Bungee Workout Our Team SelectedPhotos-09214.avif";
+import bungeeHiiTImage from "@/media/Bungee HiiT.avif";
+import bungeeOscillateImage from "@/media/Bungee Oscillation.avif";
+import kidsBungeeImage from "@/media/kids bungee.avif";
+import familyBungeeImage from "@/media/family bungee.avif";
+
+// Map class hrefs to their background images
+const classImageMap: Record<string, string> = {
+  "/classes/bungee-workout": bungeeWorkoutImage,
+  "/classes/bungee-hiit": bungeeHiiTImage,
+  "/classes/bungee-oscillate": bungeeOscillateImage,
+  "/classes/kids-bungee": kidsBungeeImage,
+  "/classes/family-bungee": familyBungeeImage,
+};
 
 const ClassesOverview = () => {
   useSeo({
@@ -31,26 +45,41 @@ const ClassesOverview = () => {
 
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-label="Bungee fitness class cards">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {classNavItems.map((item) => (
-              <Link key={item.href} to={item.href} className="block group" aria-label={`Open ${item.label} page`}>
-                <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                  <CardHeader className="space-y-3">
-                    <div className="inline-flex items-center gap-3">
-                      <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
-                        <item.icon className="w-5 h-5" />
+            {classNavItems.map((item) => {
+              const backgroundImage = classImageMap[item.href];
+              return (
+                <Link key={item.href} to={item.href} className="block group" aria-label={`Open ${item.label} page`}>
+                  <Card className="relative overflow-hidden h-full min-h-[320px] transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:scale-105 rounded-2xl">
+                    {/* Background Image */}
+                    {backgroundImage && (
+                      <div className="absolute inset-0">
+                        <img 
+                          src={backgroundImage} 
+                          alt={item.label}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        {/* Gradient Overlay for better text readability */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background/90" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent" />
                       </div>
-                      <CardTitle className="text-2xl">{item.label}</CardTitle>
+                    )}
+                    
+                    {/* Content */}
+                    <div className="relative z-10 h-full flex flex-col justify-end p-6">
+                      <CardHeader className="p-0 space-y-3 mb-4">
+                        <CardTitle className="text-2xl font-bold text-foreground drop-shadow-lg">{item.label}</CardTitle>
+                        <CardDescription className="text-base text-foreground/90 font-medium drop-shadow-md">{item.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-0">
+                        <Button className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold" variant="default">
+                          View class details
+                        </Button>
+                      </CardContent>
                     </div>
-                    <CardDescription className="text-base">{item.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button className="w-full" variant="secondary">
-                      View class details
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
 
           <article className="mt-10 rounded-xl border bg-card text-card-foreground p-6">

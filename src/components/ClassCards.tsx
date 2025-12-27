@@ -1,37 +1,41 @@
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Dumbbell, Zap, Activity, Users, Heart } from "lucide-react";
+import bungeeWorkoutImage from "@/media/Elin Dance Studio Singapore - Bungee Workout Our Team SelectedPhotos-09214.avif";
+import bungeeHiiTImage from "@/media/Bungee HiiT.avif";
+import bungeeOscillateImage from "@/media/Bungee Oscillation.avif";
+import kidsBungeeImage from "@/media/kids bungee.avif";
+import familyBungeeImage from "@/media/family bungee.avif";
 
 const classData = [
   {
     title: "Bungee Workout",
     description: "Low impact, high intensity cardio workout that enables you to fly",
-    icon: Dumbbell,
-    link: "/classes/bungee-workout"
+    link: "/classes/bungee-workout",
+    image: bungeeWorkoutImage
   },
   {
     title: "Bungee HIIT",
     description: "High-intensity interval training with bungee resistance for maximum results",
-    icon: Zap,
-    link: "/classes/bungee-hiit"
+    link: "/classes/bungee-hiit",
+    image: bungeeHiiTImage
   },
   {
     title: "Bungee Oscillate",
     description: "Rhythmic fluid movements for balance, coordination and agility",
-    icon: Activity,
-    link: "/classes/bungee-oscillate"
+    link: "/classes/bungee-oscillate",
+    image: bungeeOscillateImage
   },
   {
     title: "Kids Bungee",
     description: "Fun and energetic fitness program designed specifically for children",
-    icon: Heart,
-    link: "/classes/kids-bungee"
+    link: "/classes/kids-bungee",
+    image: kidsBungeeImage
   },
   {
     title: "Family Bungee",
     description: "Bounce, bond and build strength together as a family",
-    icon: Users,
-    link: "/classes/family-bungee"
+    link: "/classes/family-bungee",
+    image: familyBungeeImage
   }
 ];
 
@@ -50,17 +54,30 @@ const ClassCards = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {classData.map((classItem, index) => (
-            <Link to={classItem.link} key={index}>
+            <Link to={classItem.link} key={index} className="group">
               <Card 
-                className="glass-card p-6 rounded-2xl hover:glow-cyan transition-all duration-500 transform hover:-translate-y-2 animate-fade-in cursor-pointer h-full"
+                className="relative overflow-hidden rounded-2xl hover:glow-cyan transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fade-in cursor-pointer h-full min-h-[280px] sm:min-h-[320px]"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-gradient-cyan rounded-full flex items-center justify-center mb-4">
-                    <classItem.icon className="w-7 h-7 text-white" />
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <img 
+                    src={classItem.image} 
+                    alt={classItem.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Gradient Overlay for better text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background/90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent" />
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 h-full flex flex-col justify-end p-6">
+                  {/* Text at bottom */}
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-2 drop-shadow-lg">{classItem.title}</h3>
+                    <p className="text-sm text-foreground/90 font-medium drop-shadow-md">{classItem.description}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{classItem.title}</h3>
-                  <p className="text-sm text-muted-foreground">{classItem.description}</p>
                 </div>
               </Card>
             </Link>
