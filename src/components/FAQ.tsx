@@ -42,7 +42,7 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-background relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -53,7 +53,7 @@ const FAQ = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             <span className="text-gradient-cyan">Frequently Asked Questions</span>
           </h2>
@@ -83,12 +83,12 @@ const FAQ = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="text-center mt-10 sm:mt-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <p className="text-lg text-muted-foreground mb-4">
             Ready to experience Singapore's best bungee fitness workout?
           </p>
           <a 
-            href="#contact" 
+            href="/contact" 
             className="inline-block bg-gradient-cyan hover:glow-cyan-strong text-white font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105"
           >
             Book Your Bungee Fitness Trial in Singapore Today!

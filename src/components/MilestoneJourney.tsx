@@ -41,7 +41,7 @@ const MilestoneJourney = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-light relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-light relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
@@ -50,7 +50,7 @@ const MilestoneJourney = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             <span className="text-gradient-cyan">🌟 Our Milestone Journey:</span>
             <br />
@@ -63,7 +63,7 @@ const MilestoneJourney = () => {
         </div>
 
         {/* Milestone Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {milestones.map((milestone, index) => (
             <div
               key={index}

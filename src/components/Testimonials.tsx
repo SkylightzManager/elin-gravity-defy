@@ -63,14 +63,14 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-light relative overflow-hidden">
       {/* Background Glow Effects */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-cyan rounded-full mb-6">
             <Quote className="w-8 h-8 text-white" />
           </div>
@@ -104,7 +104,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Quote */}
-                    <p className="text-muted-foreground mb-6 leading-relaxed text-center text-lg">
+                    <p className="text-muted-foreground mb-6 leading-relaxed text-center text-base sm:text-lg px-2">
                       "{testimonial.text}"
                     </p>
 
@@ -127,15 +127,17 @@ const Testimonials = () => {
           {/* Navigation Arrows */}
           <button 
             onClick={goToPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            className="absolute left-0 sm:left-4 top-1/2 -translate-y-1/2 -translate-x-2 sm:translate-x-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-white transition-colors z-10 shadow-lg"
+            aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
           <button 
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            className="absolute right-0 sm:right-4 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-white transition-colors z-10 shadow-lg"
+            aria-label="Next testimonial"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
           {/* Dots */}
@@ -156,7 +158,7 @@ const Testimonials = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 sm:mt-16 max-w-4xl mx-auto">
           {[
             { value: "500+", label: "Happy Flyers" },
             { value: "1000+", label: "Classes Conducted" },

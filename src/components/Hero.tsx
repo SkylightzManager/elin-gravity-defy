@@ -52,38 +52,39 @@ const Hero = () => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in">
-          <span className="block text-gradient-cyan">BUNGEE FITNESS SINGAPORE</span>
-          <span className="block text-foreground mt-2">DEFY GRAVITY. DISCOVER STRENGTH.</span>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 animate-fade-in px-2">
+          <span className="block text-gradient-cyan leading-tight">BUNGEE FITNESS SINGAPORE</span>
+          <span className="block text-foreground mt-2 leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">DEFY GRAVITY. DISCOVER STRENGTH.</span>
         </h1>
 
         {/* Subheading */}
-        <p className="text-xl sm:text-2xl md:text-3xl text-primary font-semibold mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-primary font-semibold mb-3 sm:mb-4 animate-fade-in px-4" style={{ animationDelay: '0.2s' }}>
           Singapore's Premier Bungee Workout Studio Near Alexandra & Labrador Park MRT
         </p>
 
         {/* Tagline */}
-        <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in script-font" style={{ animationDelay: '0.4s' }}>
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-8 sm:mb-12 max-w-2xl mx-auto animate-fade-in script-font px-4" style={{ animationDelay: '0.4s' }}>
           Low-Impact, High-Intensity Bungee Fitness Classes for Ages 4-66 | Every Mind Matters, Every Dream Counts
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-in px-4" style={{ animationDelay: '0.6s' }}>
           <Button 
             size="lg"
             onClick={handleBooking}
-            className="bg-gradient-cyan hover:glow-cyan-strong text-white font-bold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group"
+            className="bg-gradient-cyan hover:glow-cyan-strong text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-all duration-300 transform hover:scale-105 group w-full sm:w-auto"
           >
             Book Your Bungee Fitness Trial
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
           <Button 
             size="lg" 
             variant="outline"
-            className="glass-card border-primary text-foreground hover:bg-primary/10 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105 group bg-background/80 backdrop-blur-sm"
+            className="glass-card border-primary text-foreground hover:bg-primary/10 font-semibold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-all duration-300 transform hover:scale-105 group bg-background/80 backdrop-blur-sm w-full sm:w-auto"
           >
-            <Play className="mr-2 group-hover:scale-110 transition-transform" />
-            Watch Bungee Workout Video
+            <Play className="mr-2 group-hover:scale-110 transition-transform w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="hidden sm:inline">Watch Bungee Workout Video</span>
+            <span className="sm:hidden">Watch Video</span>
           </Button>
         </div>
 

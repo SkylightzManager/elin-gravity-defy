@@ -28,13 +28,13 @@ const BungeeWorkout = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary/10 to-background">
-        <div className="container mx-auto px-4">
+      <section className="pt-20 sm:pt-32 pb-12 sm:pb-16 bg-gradient-to-b from-primary/10 to-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Bungee <span className="text-primary">Workout</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-foreground font-medium mb-8">
+            <p className="text-xl sm:text-2xl md:text-3xl text-foreground font-medium mb-6 sm:mb-8">
               Defy Gravity, Redefine Fitness.
             </p>
             <Button 
@@ -49,14 +49,14 @@ const BungeeWorkout = () => {
       </section>
 
       {/* What is Bungee Workout */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">What is Bungee Workout?</h2>
-            <p className="text-xl text-primary font-medium text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8">What is Bungee Workout?</h2>
+            <p className="text-lg sm:text-xl text-primary font-medium text-center mb-6 sm:mb-8 px-4">
               Low Impact, High Intensity cardio workout that enables you to fly
             </p>
-            <div className="space-y-6 text-muted-foreground">
+            <div className="space-y-4 sm:space-y-6 text-muted-foreground text-sm sm:text-base px-4">
               <p>
                 Bungee Workout involves being attached to a harness and bungee cord that is in turn attached to a structure mounted to the ceiling. The bungee cord supports your weight while you jump, fly and dive, allowing you to leap into the air like you never thought possible!
               </p>
@@ -75,9 +75,9 @@ const BungeeWorkout = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Benefits</h2>
+      <section className="py-12 sm:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Benefits</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center p-6 rounded-xl border border-border bg-card">
@@ -137,16 +137,21 @@ const BungeeWorkout = () => {
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">Enquire With Us!</h2>
             <form
-              action="https://formsubmit.co/enquiry@elindance.com.sg"
+              action="https://formsubmit.co/skylightzmanager@gmail.com"
               method="POST"
               className="space-y-6"
             >
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_subject" value="Bungee Workout Enquiry" />
+              <input type="hidden" name="_subject" value="Bungee Workout Class Booking - Elin Dance Studio" />
+              <input type="hidden" name="class_type" value="Bungee Workout" />
+              <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}?submitted=true`} />
               
               <div>
                 <Input name="name" placeholder="Name" required className="bg-card" />
+              </div>
+              <div>
+                <Input name="email" type="email" placeholder="Email Address" required className="bg-card" />
               </div>
               <div>
                 <select 

@@ -132,4 +132,29 @@ All colors MUST be HSL.
   .script-font {
     font-family: 'Dancing Script', cursive;
   }
+
+  /* Custom scrollbar for mobile menu */
+  .mobile-menu-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .mobile-menu-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .mobile-menu-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 10px;
+  }
+  
+  .mobile-menu-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-deep));
+  }
+
+  /* Firefox scrollbar */
+  .mobile-menu-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) rgba(255, 255, 255, 0.1);
+  }
 }

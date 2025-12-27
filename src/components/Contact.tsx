@@ -45,7 +45,7 @@ const Contact = () => {
   }, [toast]);
 
   return (
-    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-light relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-full opacity-30">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl animate-pulse" />
@@ -54,7 +54,7 @@ const Contact = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Book Your <span className="text-gradient-cyan">Bungee Fitness Trial</span>
           </h2>
@@ -63,12 +63,12 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="glass-card p-8 rounded-2xl animate-fade-in">
+          <div className="glass-card p-4 sm:p-6 lg:p-8 rounded-2xl animate-fade-in">
             <h3 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
             <form 
-              action="https://formsubmit.co/anshguptasjs@gmail.com"
+              action="https://formsubmit.co/skylightzmanager@gmail.com"
               method="POST"
               className="space-y-6"
             >
@@ -77,6 +77,27 @@ const Contact = () => {
               <input type="hidden" name="_subject" value="New Bungee Fitness Inquiry - Elin Dance Studio" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_next" value={`${window.location.origin}?submitted=true`} />
+              <input type="hidden" name="class_type" value="General Inquiry" />
+              
+              <div>
+                <label className="text-sm font-medium text-muted-foreground mb-2 block">
+                  Interested Class (Optional)
+                </label>
+                <select 
+                  name="interested_class"
+                  className="w-full h-10 px-3 rounded-md border border-input bg-secondary/50 border-primary/30 text-foreground"
+                >
+                  <option value="">Select a class (if applicable)</option>
+                  <option value="Bungee Workout">Bungee Workout</option>
+                  <option value="Bungee HiiT">Bungee HiiT</option>
+                  <option value="Bungee Oscillate">Bungee Oscillate</option>
+                  <option value="Kids Bungee">Kids Bungee</option>
+                  <option value="Family Bungee">Family Bungee</option>
+                  <option value="Trial Classes">Trial Classes</option>
+                  <option value="Corporate Teambuilding">Corporate Teambuilding</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+              </div>
 
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
@@ -166,16 +187,20 @@ const Contact = () => {
             {/* Social Media */}
             <div className="glass-card p-6 rounded-xl">
               <h4 className="text-lg font-bold text-foreground mb-4">Follow Us</h4>
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap">
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/elin.dancestudio/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-gradient-cyan rounded-full flex items-center justify-center hover:glow-cyan transition-all duration-300 transform hover:scale-110"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-6 h-6 text-white" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.facebook.com/ElinDanceStudio" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-gradient-cyan rounded-full flex items-center justify-center hover:glow-cyan transition-all duration-300 transform hover:scale-110"
                   aria-label="Facebook"
                 >

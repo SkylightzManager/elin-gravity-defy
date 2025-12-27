@@ -41,15 +41,15 @@ const instructors = [
 
 const About = () => {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-light relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">
             All About <span className="text-gradient-cyan">Elin Dance Studio</span>
           </h1>
           <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground">
@@ -66,7 +66,7 @@ const About = () => {
         </div>
 
         {/* Mission, Vision, Team */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-3 gap-8 mb-10 sm:mb-12">
           <div className="glass-card p-8 rounded-2xl text-center hover:glow-cyan transition-all duration-300">
             <div className="w-16 h-16 bg-gradient-cyan rounded-full flex items-center justify-center mx-auto mb-6">
               <Target className="w-8 h-8 text-primary-foreground" />
@@ -99,8 +99,8 @@ const About = () => {
         </div>
 
         {/* Instructors Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
+        <div className="mb-10 sm:mb-12">
+          <div className="text-center mb-8 sm:mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Our <span className="text-gradient-cyan">Instructors</span>
             </h2>

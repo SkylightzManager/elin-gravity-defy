@@ -25,7 +25,7 @@ const CorporateTeamBuilding = ({ showFullContent = false }: CorporateTeamBuildin
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
   return (
-    <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-background relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse" />
@@ -34,15 +34,15 @@ const CorporateTeamBuilding = ({ showFullContent = false }: CorporateTeamBuildin
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
           <p className="text-primary font-semibold mb-2">CORPORATE TEAMBUILDING | TEAM BONDING</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-4">
             An Unforgettable Teambuilding <span className="text-gradient-cyan">Fun for Everyone</span>
           </h1>
         </div>
 
         {/* Main Content */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-10 sm:mb-12">
           <div className="text-center space-y-6 text-muted-foreground">
             <h2 className="text-2xl font-bold text-foreground">Corporate Workshop for Team Building and Bonding!</h2>
             <p className="text-lg">Bungee Workout away all the stress and build stronger bonds with your employees!</p>
@@ -58,7 +58,7 @@ const CorporateTeamBuilding = ({ showFullContent = false }: CorporateTeamBuildin
           </div>
 
           {/* Themes */}
-          <div className="mt-12 text-center">
+          <div className="mt-8 sm:mt-10 text-center">
             <p className="text-lg font-semibold mb-4">Themes to choose from:</p>
             <div className="flex flex-wrap justify-center gap-4">
               {themes.map((theme, index) => (
@@ -71,9 +71,9 @@ const CorporateTeamBuilding = ({ showFullContent = false }: CorporateTeamBuildin
         </div>
 
         {/* Suitable For Section */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Suitable for:</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-4xl mx-auto mb-10 sm:mb-12">
+          <h3 className="text-2xl font-bold text-center mb-6 sm:mb-8">Suitable for:</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {suitableFor.map((item, index) => (
               <div key={index} className="text-center p-6 rounded-xl border border-border bg-card">
                 <item.icon className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -87,13 +87,13 @@ const CorporateTeamBuilding = ({ showFullContent = false }: CorporateTeamBuildin
         {showFullContent && (
           <>
             {/* Collaborated With Section */}
-            <div className="max-w-4xl mx-auto mb-16 text-center">
+            <div className="max-w-4xl mx-auto mb-10 sm:mb-12 text-center">
               <h3 className="text-2xl font-bold mb-8">Collaborated with:</h3>
               <p className="text-muted-foreground">(Partner logos would be displayed here)</p>
             </div>
 
             {/* Testimonial */}
-            <div className="max-w-3xl mx-auto mb-16 text-center">
+            <div className="max-w-3xl mx-auto mb-10 sm:mb-12 text-center">
               <div className="text-primary text-2xl mb-4">★★★★★</div>
               <p className="text-lg italic text-muted-foreground mb-4">
                 "Love the bungee fitness session at Elin Dance studio. All my friends and colleagues enjoyed the session. The instructors were very patient to guide us through in a fun way. Definitely, a great choice for team bonding and gathering activities for friends & family. Check it out now!"
@@ -104,22 +104,31 @@ const CorporateTeamBuilding = ({ showFullContent = false }: CorporateTeamBuildin
             {/* Booking Form */}
             <div className="max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-center mb-8">Book a Session</h3>
-              <form className="space-y-6 p-8 rounded-xl border border-border bg-card">
+              <form 
+                action="https://formsubmit.co/skylightzmanager@gmail.com"
+                method="POST"
+                className="space-y-6 p-8 rounded-xl border border-border bg-card"
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_subject" value="Corporate Teambuilding Booking - Elin Dance Studio" />
+                <input type="hidden" name="class_type" value="Corporate Teambuilding" />
+                <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}?submitted=true`} />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Your Name" />
-                  <Input placeholder="Company Name" />
+                  <Input name="name" placeholder="Your Name" required />
+                  <Input name="company" placeholder="Company Name" required />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Email" type="email" />
-                  <Input placeholder="Phone Number" type="tel" />
+                  <Input name="email" placeholder="Email" type="email" required />
+                  <Input name="phone" placeholder="Phone Number" type="tel" required />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Group Size" type="number" />
-                  <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
+                  <Input name="group_size" placeholder="Group Size" type="number" min="1" required />
+                  <select name="time_slot" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required>
                     <option value="">Time Slot</option>
-                    <option value="morning">Morning</option>
-                    <option value="afternoon">Afternoon</option>
-                    <option value="evening">Evening</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
                   </select>
                 </div>
                 <div>
@@ -127,7 +136,7 @@ const CorporateTeamBuilding = ({ showFullContent = false }: CorporateTeamBuildin
                   <div className="flex flex-wrap gap-4">
                     {days.map((day) => (
                       <label key={day} className="flex items-center space-x-2">
-                        <Checkbox />
+                        <Checkbox name="days" value={day} />
                         <span className="text-sm">{day}</span>
                       </label>
                     ))}

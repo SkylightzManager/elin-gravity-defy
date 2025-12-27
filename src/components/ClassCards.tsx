@@ -37,13 +37,13 @@ const classData = [
 
 const ClassCards = () => {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-light relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Our <span className="text-gradient-cyan">Classes</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Discover the perfect bungee fitness class for you
           </p>
         </div>

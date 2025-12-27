@@ -105,16 +105,21 @@ const FamilyBungee = () => {
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">Enquire With Us!</h2>
             <form
-              action="https://formsubmit.co/enquiry@elindance.com.sg"
+              action="https://formsubmit.co/skylightzmanager@gmail.com"
               method="POST"
               className="space-y-6"
             >
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_subject" value="Family Bungee Enquiry" />
+              <input type="hidden" name="_subject" value="Family Bungee Class Booking - Elin Dance Studio" />
+              <input type="hidden" name="class_type" value="Family Bungee" />
+              <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}?submitted=true`} />
               
               <div>
                 <Input name="parent_name" placeholder="Parent Name" required className="bg-card" />
+              </div>
+              <div>
+                <Input name="email" type="email" placeholder="Email Address" required className="bg-card" />
               </div>
               <div>
                 <select 

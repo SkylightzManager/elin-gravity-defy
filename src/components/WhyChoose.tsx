@@ -31,14 +31,14 @@ interface WhyChooseProps {
 
 const WhyChoose = ({ showFullContent = true }: WhyChooseProps) => {
   return (
-    <section className="py-20 sm:py-32 bg-gradient-light relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-light relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
       <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Why Choose <span className="text-gradient-cyan">Elin Dance Studio</span>
           </h2>
@@ -48,7 +48,7 @@ const WhyChoose = ({ showFullContent = true }: WhyChooseProps) => {
         </div>
 
         {/* Content Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10 sm:mb-12">
           {/* Reasons Grid */}
           <div className="space-y-6 order-2 lg:order-1">
             {reasons.map((reason, index) => (

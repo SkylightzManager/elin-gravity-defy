@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { Instagram, Facebook, Youtube, Linkedin, Mail, Phone, MapPin, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import AppDownload from "@/components/AppDownload";
@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary border-t border-primary/20 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
@@ -19,9 +19,9 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm mb-4">
               Singapore's #1 bungee fitness and aerial workout studio near Alexandra. Low-impact, high-intensity training for all ages 4-66.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
               <a 
-                href="https://www.instagram.com/elindancestudio" 
+                href="https://www.instagram.com/elin.dancestudio/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-gradient-cyan transition-all duration-300"
@@ -30,13 +30,42 @@ const Footer = () => {
                 <Instagram className="w-5 h-5 text-primary hover:text-white" />
               </a>
               <a 
-                href="https://www.facebook.com/elindancestudio" 
+                href="https://www.facebook.com/ElinDanceStudio" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-gradient-cyan transition-all duration-300"
                 aria-label="Like Elin Dance Studio on Facebook"
               >
                 <Facebook className="w-5 h-5 text-primary hover:text-white" />
+              </a>
+              <a 
+                href="https://www.tiktok.com/@elindancestudio" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-gradient-cyan transition-all duration-300"
+                aria-label="Follow Elin Dance Studio on TikTok"
+              >
+                <svg className="w-5 h-5 text-primary hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+              </a>
+              <a 
+                href="https://www.youtube.com/channel/UCyEJbt7np1KFCDemQZ7Eoxw" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-gradient-cyan transition-all duration-300"
+                aria-label="Subscribe to Elin Dance Studio on YouTube"
+              >
+                <Youtube className="w-5 h-5 text-primary hover:text-white" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/elindancestudio" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-gradient-cyan transition-all duration-300"
+                aria-label="Follow Elin Dance Studio on LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-primary hover:text-white" />
               </a>
             </div>
           </div>
@@ -94,7 +123,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link 
-                  to="/bungee-workout" 
+                  to="/classes/bungee-workout" 
                   className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
                 >
                   Bungee Fitness Workout
@@ -102,7 +131,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  to="/bungee-oscillate" 
+                  to="/classes/bungee-oscillate" 
                   className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
                 >
                   Bungee Yoga Classes
@@ -110,7 +139,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  to="/bungee-hiit" 
+                  to="/classes/bungee-hiit" 
                   className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
                 >
                   Aerial Fitness Training
@@ -118,7 +147,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  to="/kids-bungee" 
+                  to="/classes/kids-bungee" 
                   className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
                 >
                   Kids Fitness (Age 4+)
@@ -126,7 +155,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  to="/family-bungee" 
+                  to="/classes/family-bungee" 
                   className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
                 >
                   Family Bungee Classes
@@ -167,8 +196,8 @@ const Footer = () => {
         </div>
 
         {/* Partnership Section */}
-        <div className="border-t border-primary/20 pt-8 mb-8">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="border-t border-primary/20 pt-6 sm:pt-8 mb-6 sm:mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div>
               <h3 className="text-lg font-bold text-foreground mb-4">We Are Also On:</h3>
               <div className="flex items-center gap-4">

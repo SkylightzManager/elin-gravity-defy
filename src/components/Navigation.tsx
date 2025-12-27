@@ -19,6 +19,18 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const classesDropdown = classNavItems;
   const promotionsDropdown = promotionNavItems;
 
@@ -51,7 +63,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 2xl:gap-6">
             <Link
               to="/"
               className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
@@ -77,7 +89,7 @@ const Navigation = () => {
                 Classes
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </Link>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-background border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[500px] xl:w-[600px] bg-background border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
                 <div className="grid grid-cols-2 gap-3">
                   {classesDropdown.map((item) => (
                     <Link
@@ -107,7 +119,7 @@ const Navigation = () => {
                 Promotions
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </Link>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[400px] bg-background border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[350px] xl:w-[400px] bg-background border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
                 <div className="grid grid-cols-1 gap-3">
                   {promotionsDropdown.map((item) => (
                     <Link
@@ -138,15 +150,16 @@ const Navigation = () => {
 
             <Link
               to="/corporate-teambuilding"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group whitespace-nowrap"
             >
-              Corporate Teambuilding
+              <span className="hidden xl:inline">Corporate Teambuilding</span>
+              <span className="xl:hidden">Corporate</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </Link>
 
             <Link
               to="/contact"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group whitespace-nowrap"
             >
               Contact Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -155,7 +168,7 @@ const Navigation = () => {
 
           {/* CTA Button & App Download */}
           <div className="hidden lg:flex items-center gap-4">
-            <AppDownload size="default" />
+            <AppDownload size="large" />
             <Button 
               onClick={handleBookNow}
               className="bg-gradient-cyan hover:glow-cyan text-white font-semibold"
@@ -177,8 +190,8 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden glass-card border-t border-primary/30 animate-fade-in">
-          <div className="container mx-auto px-4 py-6 space-y-4">
+        <div className="lg:hidden glass-card border-t border-primary/30 animate-fade-in fixed top-20 left-0 right-0 bottom-0 z-40">
+          <div className="container mx-auto px-4 py-6 space-y-4 h-full overflow-y-auto overflow-x-hidden overscroll-contain mobile-menu-scroll">
             <Link
               to="/"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -252,7 +265,7 @@ const Navigation = () => {
                     </div>
                   </Link>
                 ))}
-            </div>
+              </div>
             </div>
 
             <Link
