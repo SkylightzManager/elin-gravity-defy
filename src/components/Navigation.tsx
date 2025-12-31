@@ -41,13 +41,14 @@ const Navigation = () => {
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'glass-card border-b border-primary/30' 
-          : 'bg-transparent'
-      }`}
-    >
+    <>
+      <nav 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? 'glass-card border-b border-primary/30' 
+            : 'bg-transparent'
+        }`}
+      >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -187,11 +188,13 @@ const Navigation = () => {
           </button>
         </div>
       </div>
+      </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Rendered outside nav to avoid positioning constraints */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden glass-card border-t border-primary/30 animate-fade-in fixed top-20 left-0 right-0 bottom-0 z-40">
-          <div className="container mx-auto px-4 py-6 space-y-4 h-full overflow-y-auto overflow-x-hidden overscroll-contain mobile-menu-scroll">
+        <div className="lg:hidden fixed top-20 left-0 right-0 bottom-0 z-[100] bg-background/95 backdrop-blur-md">
+          <div className="h-full overflow-y-auto overflow-x-hidden overscroll-contain mobile-menu-scroll">
+            <div className="container mx-auto px-4 py-6 space-y-4">
             <Link
               to="/"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -292,19 +295,20 @@ const Navigation = () => {
               Contact Us
             </Link>
 
-            <div className="flex flex-col gap-4 pt-4 border-t border-border">
-              <AppDownload size="large" className="justify-center" />
-              <Button 
-                onClick={handleBookNow}
-                className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold"
-              >
-                Book Now
-              </Button>
+              <div className="flex flex-col gap-4 pt-4 border-t border-border">
+                <AppDownload size="large" className="justify-center" />
+                <Button 
+                  onClick={handleBookNow}
+                  className="w-full bg-gradient-cyan hover:glow-cyan text-white font-semibold"
+                >
+                  Book Now
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 };
 

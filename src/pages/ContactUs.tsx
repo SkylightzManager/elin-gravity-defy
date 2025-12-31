@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import AppDownload from "@/components/AppDownload";
 import Contact from "@/components/Contact";
 
 const ContactUs = () => {
@@ -10,7 +9,6 @@ const ContactUs = () => {
       <div className="pt-20">
         <Contact />
       </div>
-      <AppDownload />
       <Footer />
     </div>
   );

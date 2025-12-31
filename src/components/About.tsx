@@ -1,6 +1,7 @@
 import { Target, Eye, Users } from "lucide-react";
 import aboutUsImage from "@/media/about us.avif";
 import elinPhoto from "@/media/instructors/Elin Zhang _ Main Instructor _ Bungee Trainer Programme _ Elin Dance Studio.avif";
+import WhyChoose from "@/components/WhyChoose";
 import irenePhoto from "@/media/instructors/Irene _ Instructor _ Bungee Trainer Programme _ Elin Dance Studio.avif";
 import deliaPhoto from "@/media/instructors/Delia _ Instructor _ Bungee Trainer Programme _ Elin Dance Studio.avif";
 import aliciaPhoto from "@/media/instructors/Alicia _ Instructor _ Bungee Trainer Programme _ Elin Dance Studio.avif";
@@ -204,6 +205,71 @@ const About = () => {
           </div>
         </div>
 
+        {/* Main Training Instructor - Elin Zhang */}
+        <div className="mb-10 sm:mb-12">
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Main Training <span className="text-gradient-cyan">Instructor</span>
+            </h2>
+          </div>
+          
+          <div className="max-w-4xl mx-auto glass-card rounded-2xl overflow-hidden hover:glow-cyan transition-all duration-300">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-8">
+              {/* Instructor Photo */}
+              <div className="relative h-64 sm:h-80 md:h-full rounded-xl overflow-hidden">
+                <img 
+                  src={elinPhoto} 
+                  alt="Elin Zhang - Main Instructor"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+              </div>
+              
+              {/* Instructor Info */}
+              <div className="flex flex-col justify-center">
+                <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Elin Zhang</h3>
+                <p className="text-lg text-muted-foreground mb-6 font-medium">
+                  Founder and Main Instructor, Elin Dance Studio Pte Ltd
+                </p>
+                
+                <div>
+                  <h4 className="text-xl font-bold text-foreground mb-4">QUALIFICATIONS</h4>
+                  <ul className="space-y-2.5">
+                    <li className="text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span>Certified Indoor Bungee Workout Trainer by the General Administration of Sport of China</span>
+                    </li>
+                    <li className="text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span>Certified Indoor Bungee Workout Trainer by the Chinese Yoga Alliance</span>
+                    </li>
+                    <li className="text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span>RYT200 Registered Yoga Instructor</span>
+                    </li>
+                    <li className="text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span>RYT300 Registered Yoga Instructor</span>
+                    </li>
+                    <li className="text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span>RPYT Prenatal Yoga Instructor</span>
+                    </li>
+                    <li className="text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span>RPYT Yin Yoga Instructor</span>
+                    </li>
+                    <li className="text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span>Aerial Yoga Instructor</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Instructors Section */}
         <div className="mb-10 sm:mb-12">
           <div className="text-center mb-8 sm:mb-10">
@@ -226,7 +292,8 @@ const About = () => {
                   <img 
                     src={instructor.photo} 
                     alt={instructor.name}
-                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    style={{ objectPosition: 'center 30%' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                 </div>
@@ -247,6 +314,9 @@ const About = () => {
             ))}
           </div>
         </div>
+
+        {/* Why Choose Section */}
+        <WhyChoose showFullContent={true} />
 
         {/* Media Section */}
         <div className="text-center glass-card p-8 rounded-2xl mb-10 sm:mb-12">

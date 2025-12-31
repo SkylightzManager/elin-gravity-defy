@@ -23,18 +23,18 @@ const AppDownload = ({ className = "", size = "default" }: AppDownloadProps) => 
   return (
     <div className={`flex flex-row -space-x-1 ${className}`}>
       <button
-        onClick={handlePlayStore}
-        className="hover:opacity-80 hover:scale-105 transition-all duration-300"
-        aria-label="Get it on Google Play"
-      >
-        <img src={googlePlayBadge} alt="Get it on Google Play" className={`${imgHeight} ${imgWidth} object-contain`} />
-      </button>
-      <button
         onClick={handleAppStore}
         className="hover:opacity-80 hover:scale-105 transition-all duration-300"
         aria-label="Download on App Store"
       >
         <img src={appStoreBadge} alt="Download on App Store" className={`${imgHeight} ${imgWidth} object-contain`} />
+      </button>
+      <button
+        onClick={handlePlayStore}
+        className="hover:opacity-80 hover:scale-105 transition-all duration-300"
+        aria-label="Get it on Google Play"
+      >
+        <img src={googlePlayBadge} alt="Get it on Google Play" className={`${imgHeight} ${imgWidth} object-contain`} />
       </button>
     </div>
   );

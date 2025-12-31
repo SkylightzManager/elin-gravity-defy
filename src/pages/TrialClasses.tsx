@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import AppDownload from "@/components/AppDownload";
 import { Button } from "@/components/ui/button";
 import { Gift, Clock, CheckCircle, Rocket } from "lucide-react";
 import { getBookingUrl } from "@/lib/platformDetect";
@@ -87,7 +86,6 @@ const TrialClasses = () => {
         </div>
       </section>
 
-      <AppDownload />
       <Footer />
     </div>
   );

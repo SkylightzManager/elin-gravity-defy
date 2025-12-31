@@ -1,7 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import AppDownload from "@/components/AppDownload";
-import Chatbot from "@/components/Chatbot";
 import { useSeo } from "@/hooks/useSeo";
 import { CheckCircle } from "lucide-react";
 
@@ -160,9 +158,7 @@ const Milestone = () => {
         </section>
       ))}
 
-      <AppDownload />
       <Footer />
-      <Chatbot />
     </div>
   );
 };

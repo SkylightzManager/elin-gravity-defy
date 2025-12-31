@@ -1,8 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import AppDownload from "@/components/AppDownload";
 import About from "@/components/About";
-import WhyChoose from "@/components/WhyChoose";
 import FeaturedMedia from "@/components/FeaturedMedia";
 
 const AboutUs = () => {
@@ -12,9 +10,7 @@ const AboutUs = () => {
       <div className="pt-20">
         <About />
         <FeaturedMedia />
-        <WhyChoose />
       </div>
-      <AppDownload />
       <Footer />
     </div>
   );

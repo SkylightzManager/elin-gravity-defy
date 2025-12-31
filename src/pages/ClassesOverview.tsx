@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import AppDownload from "@/components/AppDownload";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { classNavItems } from "@/lib/navItems";
@@ -96,7 +95,6 @@ const ClassesOverview = () => {
         </section>
       </main>
 
-      <AppDownload />
       <Footer />
     </div>
   );
