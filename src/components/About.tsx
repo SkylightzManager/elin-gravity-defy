@@ -20,8 +20,31 @@ import asiaOneLogo from "@/media/ASIAONE.svg";
 import mediacorpLogo from "@/media/Mediacorp.png";
 import confirmGoodLogo from "@/media/Confirm_Good_Logo.webp";
 import theIndependentLogo from "@/media/the independent.png";
-// TODO: Add Made For Families logo when provided
-// import madeForFamiliesLogo from "@/media/made-for-families.png";
+import famveusLogo from "@/media/famveus.png";
+import bungeeHiitImage from "@/media/Bungee HiiT.avif";
+import bungeeOscillationImage from "@/media/Bungee Oscillation.avif";
+import familyBungeeImage from "@/media/family bungee.avif";
+import kidsBungeeImage from "@/media/kids bungee.avif";
+import aboutUsImageMedia from "@/media/about us.avif";
+import teamPhotoImage from "@/media/Elin Dance Studio Singapore - Bungee Workout Our Team SelectedPhotos-09214.avif";
+
+// Media feature specific images
+import timeOutSingaporePic from "@/media/mediaFeature/timeoutsingaporepic.avif";
+import channelNewsAsiaPic from "@/media/mediaFeature/channelnewsasiapic.avif";
+import presidentsStarCityPic from "@/media/mediaFeature/president'sstarcitypic.avif";
+import shinMinDailyPic from "@/media/mediaFeature/shinmindailypic.avif";
+import asiaOnePic from "@/media/mediaFeature/asiaonepic.avif";
+import confirmGoodPic from "@/media/mediaFeature/confirmgoodpic.avif";
+
+// Array of random images for media features that don't have specific images
+const mediaFeatureImages = [
+  bungeeHiitImage,
+  bungeeOscillationImage,
+  familyBungeeImage,
+  kidsBungeeImage,
+  aboutUsImageMedia,
+  teamPhotoImage,
+];
 
 const instructors = [
   {
@@ -76,56 +99,67 @@ const mediaFeatures = [
     logo: m8Logo,
     title: "8World News 狮城6点半",
     description: "Elin Dance Studio's Bungee Workout Featuring on 狮城6点半 and also on 8 World Youtube",
+    image: mediaFeatureImages[0], // No specific image, using random
   },
   {
     logo: m8Logo,
     title: "8World Website",
     description: "Elin Dance Studio's Bungee Workout Featuring on 潮流解码 and also on 8 World Youtube",
+    image: mediaFeatureImages[1], // No specific image, using random
   },
   {
     logo: timeOutLogo,
     title: "TimeOut Singapore",
     description: "Elin Dance Studio's Bungee Workout Featuring on TimeOut Website and TimeOut Instagram",
+    image: timeOutSingaporePic,
   },
   {
     logo: cnaLogo,
     title: "Channel News Asia",
     description: "Elin Dance Studio's Bungee Workout Featuring on Channel News Asia Website",
+    image: channelNewsAsiaPic,
   },
   {
     logo: presidentStarCharityLogo,
     title: "President's Star Charity 2022",
     description: "Elin Dance Studio's Bungee Workout Featuring on Mediacorp Youtube Channel",
+    image: presidentsStarCityPic,
   },
   {
     logo: shinMinLogo,
     title: "Shin Min Daily News 新明日报",
     description: "Photo Credit: Shin Min Daily News 新明日报 Facebook",
+    image: shinMinDailyPic,
   },
   {
     logo: asiaOneLogo,
     title: "AsiaOne",
     description: "Elin Dance Studio's Bungee Workout Featuring on AsiaOne website",
+    image: asiaOnePic,
   },
   {
     logo: mediacorpLogo,
     title: "Mediacorp",
     description: "President Star Charity x Elin Dance Studio Bungee Workout Featuring on Mediacorp Instagram",
+    image: mediaFeatureImages[2], // No specific image, using random
   },
   {
     logo: confirmGoodLogo,
     title: "Confirm Good",
     description: "Elin Dance Studio's Bungee Workout Featuring on ConfirmGood website",
+    image: confirmGoodPic,
   },
   {
     logo: theIndependentLogo,
     title: "The Independent",
     description: "President Star Charity x Elin Dance Studio Bungee Workout Featuring on The Independent Website",
+    image: mediaFeatureImages[3], // No specific image, using random
   },
   {
-    logo: null, // TODO: Add Made For Families logo when provided
+    logo: famveusLogo,
     title: "Made For Families",
     description: "Elin Dance Studio's Family Bungee Featured on Made for Families Website",
+    image: mediaFeatureImages[4], // No specific image, using random
   },
 ];
 
@@ -346,40 +380,53 @@ const About = () => {
             {mediaFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="glass-card rounded-xl overflow-hidden hover:glow-cyan transition-all duration-300 transform hover:scale-105 p-6 flex flex-col"
+                className="glass-card rounded-xl overflow-hidden hover:glow-cyan transition-all duration-300 transform hover:scale-105 flex flex-col"
               >
-                {/* Logo */}
-                <div className="flex justify-center items-center mb-4 h-20">
-                  {feature.logo ? (
+                {/* Image in 16:9 ratio */}
+                {feature.image && (
+                  <div className="w-full aspect-video overflow-hidden">
                     <img 
-                      src={feature.logo} 
+                      src={feature.image} 
                       alt={feature.title}
-                      className="max-h-16 max-w-full object-contain"
-                      style={
-                        feature.title === "Shin Min Daily News 新明日报" || feature.title === "The Independent"
-                          ? {
-                              filter: "drop-shadow(-1px -1px 0 #000) drop-shadow(1px -1px 0 #000) drop-shadow(-1px 1px 0 #000) drop-shadow(1px 1px 0 #000) drop-shadow(0 -1px 0 #000) drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow(1px 0 0 #000) drop-shadow(0 0 2px #000)",
-                              WebkitFilter: "drop-shadow(-1px -1px 0 #000) drop-shadow(1px -1px 0 #000) drop-shadow(-1px 1px 0 #000) drop-shadow(1px 1px 0 #000) drop-shadow(0 -1px 0 #000) drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow(1px 0 0 #000) drop-shadow(0 0 2px #000)"
-                            }
-                          : undefined
-                      }
+                      className="w-full h-full object-cover"
                     />
-                  ) : (
-                    <div className="text-muted-foreground text-sm text-center">
-                      Logo coming soon
-                    </div>
-                  )}
+                  </div>
+                )}
+                
+                <div className="p-6 flex flex-col flex-grow">
+                  {/* Logo */}
+                  <div className="flex justify-center items-center mb-4 h-20">
+                    {feature.logo ? (
+                      <img 
+                        src={feature.logo} 
+                        alt={feature.title}
+                        className="max-h-16 max-w-full object-contain"
+                        style={
+                          feature.title === "Shin Min Daily News 新明日报" || feature.title === "The Independent"
+                            ? {
+                                filter: "drop-shadow(-1px -1px 0 #000) drop-shadow(1px -1px 0 #000) drop-shadow(-1px 1px 0 #000) drop-shadow(1px 1px 0 #000) drop-shadow(0 -1px 0 #000) drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow(1px 0 0 #000) drop-shadow(0 0 2px #000)",
+                                WebkitFilter: "drop-shadow(-1px -1px 0 #000) drop-shadow(1px -1px 0 #000) drop-shadow(-1px 1px 0 #000) drop-shadow(1px 1px 0 #000) drop-shadow(0 -1px 0 #000) drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow(1px 0 0 #000) drop-shadow(0 0 2px #000)"
+                              }
+                            : undefined
+                        }
+                      />
+                    ) : (
+                      <div className="text-muted-foreground text-sm text-center">
+                        Logo coming soon
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-primary mb-3 text-center min-h-[3rem] flex items-center justify-center">
+                    {feature.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground text-center flex-grow">
+                    {feature.description}
+                  </p>
                 </div>
-                
-                {/* Title */}
-                <h3 className="text-lg font-bold text-primary mb-3 text-center min-h-[3rem] flex items-center justify-center">
-                  {feature.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-sm text-muted-foreground text-center flex-grow">
-                  {feature.description}
-                </p>
               </div>
             ))}
           </div>

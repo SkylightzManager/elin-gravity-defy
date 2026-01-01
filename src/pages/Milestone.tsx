@@ -82,7 +82,6 @@ const Milestone = () => {
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               At Elin Dance Studio, our journey is a story of continuous growth, built on a strong foundation and fueled by the support of our incredible members. Every theme represents a significant step we've taken together to redefine fitness and well-being.
             </p>
-            <div className="w-24 h-1 bg-gradient-cyan mx-auto mt-6 rounded-full"></div>
           </div>
         </div>
       </section>

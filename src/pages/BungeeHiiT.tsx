@@ -5,8 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Dumbbell, Flame, Heart, Zap, Target, Smile, Shield } from "lucide-react";
 import { getBookingUrl } from "@/lib/platformDetect";
+import { useSeo } from "@/hooks/useSeo";
 
 const BungeeHiiT = () => {
+  useSeo({
+    title: "Bungee HIIT Singapore | High-Intensity Bungee Training | Elin Dance Studio",
+    description: "High-intensity interval bungee training in Singapore. Full-body HIIT workout with low joint impact. Build stamina, burn calories, improve cardiovascular health. Book now!",
+    keywords: "bungee hiit singapore, high intensity bungee training singapore, hiit bungee workout singapore, bungee fitness hiit, cardio bungee workout singapore, high intensity interval training singapore",
+    canonicalPath: "/classes/bungee-hiit",
+  });
   const handleBookNow = () => {
     const bookingUrl = getBookingUrl();
     window.open(bookingUrl, '_blank', 'noopener,noreferrer');
@@ -32,7 +39,7 @@ const BungeeHiiT = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Bungee <span className="text-primary">HiiT</span>
+              Bungee <span className="text-primary">HiiT Singapore</span>
             </h1>
             <p className="text-2xl md:text-3xl text-foreground font-medium mb-4">
               Turn your Fitness Routine

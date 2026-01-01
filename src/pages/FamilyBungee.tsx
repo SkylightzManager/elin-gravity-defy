@@ -5,8 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Smile, Feather, Heart, Scale, Dumbbell, Leaf, Shield } from "lucide-react";
 import { getBookingUrl } from "@/lib/platformDetect";
+import { useSeo } from "@/hooks/useSeo";
 
 const FamilyBungee = () => {
+  useSeo({
+    title: "Family Bungee Classes Singapore | Family Fitness Bonding | Elin Dance Studio",
+    description: "Family bungee fitness classes in Singapore. Bond together while getting fit! Low-impact workout for all ages. Strengthen family bonds through fun bungee exercises. Book now!",
+    keywords: "family bungee singapore, family fitness singapore, family dance classes singapore, family workout singapore, bungee for families singapore, family bonding activities singapore",
+    canonicalPath: "/classes/family-bungee",
+  });
   const handleBookNow = () => {
     const bookingUrl = getBookingUrl();
     window.open(bookingUrl, '_blank', 'noopener,noreferrer');
@@ -32,7 +39,7 @@ const FamilyBungee = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Family <span className="text-primary">Bungee</span>
+              Family <span className="text-primary">Bungee Singapore</span>
             </h1>
             <p className="text-2xl md:text-3xl text-foreground font-medium mb-4">
               Bounce, Bond, and

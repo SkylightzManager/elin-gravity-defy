@@ -22,9 +22,10 @@ const classImageMap: Record<string, string> = {
 
 const ClassesOverview = () => {
   useSeo({
-    title: "Bungee Fitness Classes Singapore | Elin Dance Studio",
+    title: "Bungee Fitness Classes Singapore | Elin Dance Studio - Bungee Workout Classes",
     description:
       "Explore 5 bungee fitness classes in Singapore near Alexandra & Labrador Park MRT—workout, HIIT, oscillate, kids and family bungee. Book today.",
+    keywords: "bungee fitness classes singapore, bungee workout singapore, bungee class singapore, dance classes singapore, bungee fitness studio singapore, aerial fitness singapore, bungee yoga singapore",
     canonicalPath: "/classes",
   });
 

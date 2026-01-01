@@ -5,8 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Dumbbell, Brain, Heart, Flame, Feather, Award, Shield } from "lucide-react";
 import { getBookingUrl } from "@/lib/platformDetect";
+import { useSeo } from "@/hooks/useSeo";
 
 const BungeeWorkout = () => {
+  useSeo({
+    title: "Bungee Workout Singapore | Elin Dance Studio - Low Impact High Intensity",
+    description: "Experience Singapore's best bungee workout class. Low-impact, high-intensity full-body training near Alexandra. Burns 500 calories per session. Book your class today!",
+    keywords: "bungee workout singapore, bungee fitness singapore, bungee exercise singapore, bungee class singapore, low impact workout singapore, high intensity training singapore, bungee fitness classes singapore",
+    canonicalPath: "/classes/bungee-workout",
+  });
   const handleBookNow = () => {
     const bookingUrl = getBookingUrl();
     window.open(bookingUrl, '_blank', 'noopener,noreferrer');
@@ -32,7 +39,7 @@ const BungeeWorkout = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-              Bungee <span className="text-primary">Workout</span>
+              Bungee <span className="text-primary">Workout Singapore</span>
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-foreground font-medium mb-6 sm:mb-8">
               Defy Gravity, Redefine Fitness.

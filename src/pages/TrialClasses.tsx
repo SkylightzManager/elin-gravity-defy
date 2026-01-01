@@ -3,8 +3,15 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Gift, Clock, CheckCircle, Rocket } from "lucide-react";
 import { getBookingUrl } from "@/lib/platformDetect";
+import { useSeo } from "@/hooks/useSeo";
 
 const TrialClasses = () => {
+  useSeo({
+    title: "Trial Bungee Fitness Classes Singapore | First-Timer Special | Elin Dance Studio",
+    description: "Try bungee fitness in Singapore with our special trial class offer. Perfect for beginners! Experience a full 45-minute session at discounted rates. No commitment required. Book your trial today!",
+    keywords: "trial bungee fitness singapore, beginner bungee workout singapore, first time bungee class singapore, bungee fitness trial singapore, try bungee workout singapore, bungee class for beginners singapore",
+    canonicalPath: "/classes/trial-classes",
+  });
   const handleBookNow = () => {
     const bookingUrl = getBookingUrl();
     window.open(bookingUrl, '_blank', 'noopener,noreferrer');

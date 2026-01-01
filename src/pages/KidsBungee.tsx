@@ -5,8 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Dumbbell, Brain, Star, Users, Feather, Award, Shield } from "lucide-react";
 import { getBookingUrl } from "@/lib/platformDetect";
+import { useSeo } from "@/hooks/useSeo";
 
 const KidsBungee = () => {
+  useSeo({
+    title: "Kids Bungee Classes Singapore | Children's Bungee Fitness | Elin Dance Studio",
+    description: "Fun and safe bungee fitness classes for kids in Singapore. Build strength, confidence, and coordination. Low-impact workout designed for children. Ages 4+. Book now!",
+    keywords: "kids bungee singapore, children bungee fitness singapore, kids dance classes singapore, children dance studio singapore, kids fitness classes singapore, bungee for kids singapore",
+    canonicalPath: "/classes/kids-bungee",
+  });
   const handleBookNow = () => {
     const bookingUrl = getBookingUrl();
     window.open(bookingUrl, '_blank', 'noopener,noreferrer');
@@ -32,7 +39,7 @@ const KidsBungee = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Kids <span className="text-primary">Bungee</span>
+              Kids <span className="text-primary">Bungee Singapore</span>
             </h1>
             <p className="text-xl md:text-2xl text-primary font-bold mb-4">
               $160 For First Four Lessons!
